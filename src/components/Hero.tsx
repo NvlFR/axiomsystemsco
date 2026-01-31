@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronRight } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 const WORDS = ["Operations", "Sales", "Systems", "Growth"];
 
@@ -103,14 +104,14 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-[120vh] flex flex-col justify-start items-start text-left px-6 md:px-20 overflow-hidden pt-32 md:pt-48 pb-40"
+      className="relative min-h-[120vh] flex flex-col justify-start text-left overflow-hidden pt-32 md:pt-48 pb-40"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       ref={containerRef}
     >
-      <div className="relative z-10 w-full max-w-6xl space-y-4">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 space-y-4">
         {/* Floating Badge */}
-        <div className="animate-fade-in-up [animation-delay:0ms] opacity-0 flex justify-start">
+        <div className="animate-fade-in-up [animation-delay:0ms] flex justify-start">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/[0.08] bg-white/[0.04] backdrop-blur-md text-[13px] text-linear-text-secondary hover:border-white/20 hover:text-white transition-all cursor-pointer group">
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/80 animate-pulse"></span>
@@ -125,7 +126,7 @@ export default function Hero() {
         </div>
 
         {/* Provocative Headline (The new Hook) */}
-        <h1 className="animate-fade-in-up [animation-delay:200ms] opacity-0 text-[56px] md:text-[80px] lg:text-[88px] font-semibold tracking-tighter leading-[0.9] text-white">
+        <h1 className="animate-fade-in-up [animation-delay:200ms] text-[56px] md:text-[80px] lg:text-[88px] font-semibold tracking-tighter leading-[0.9] text-white">
           The End of{" "}
           <span className="text-white/50 whitespace-nowrap">Manual Work.</span>
           <div className="mt-2 flex flex-row items-center justify-start w-full text-3xl md:text-5xl font-normal text-linear-text-secondary tracking-tight min-h-[1.5em]">
@@ -145,14 +146,14 @@ export default function Hero() {
         </h1>
 
         {/* Subheadline */}
-        <p className="animate-fade-in-up [animation-delay:400ms] opacity-0 text-[18px] md:text-[21px] text-linear-text-secondary max-w-2xl mr-auto leading-relaxed font-normal tracking-wide pt-1 [text-wrap:balance]">
+        <p className="animate-fade-in-up [animation-delay:400ms] text-[18px] md:text-[21px] text-linear-text-secondary max-w-2xl mr-auto leading-relaxed font-normal tracking-wide pt-1 [text-wrap:balance]">
           The era of manual work is over. AxiomSystemsCo builds the{" "}
           <span className="text-white">infrastructure</span> you need to scale
           without adding headcount.
         </p>
 
         {/* CTA Buttons */}
-        <div className="animate-fade-in-up [animation-delay:600ms] opacity-0 flex flex-col sm:flex-row gap-4 justify-start pt-4 items-center sm:items-start">
+        <div className="animate-fade-in-up [animation-delay:600ms] flex flex-col sm:flex-row gap-4 justify-start pt-4 items-center sm:items-start">
           <Button
             onClick={() =>
               window.dispatchEvent(new CustomEvent("open-contact-modal"))
@@ -176,95 +177,104 @@ export default function Hero() {
 
       {/* 3D Parallax Glass Window */}
       {/* Split Layout: Terminal (Left) & Explanation (Right) */}
-      <div className="relative mt-48 md:mt-64 w-full max-w-6xl">
+      {/* 3D Parallax Glass Window */}
+      {/* Split Layout: Terminal (Left) & Explanation (Right) */}
+      <div className="relative mt-48 md:mt-64 w-full max-w-6xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left: Terminal Window (Smaller, No Sidebar) */}
-          <div
-            className="relative perspective-[2000px] group"
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            ref={containerRef}
-          >
+          <Reveal direction="left">
             <div
-              className="relative rounded-[12px] border border-white/[0.08] bg-[#0f1011] shadow-2xl overflow-hidden aspect-[4/3] transition-transform duration-100 ease-out"
-              style={{
-                transform: `rotateX(${5 - mousePosition.y * 0.5}deg) rotateY(${mousePosition.x * 0.5}deg)`,
-              }}
+              className="relative perspective-[2000px] group"
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              ref={containerRef}
             >
-              {/* Header */}
-              <div className="h-9 border-b border-white/[0.06] flex items-center px-4 gap-2 bg-[#121314]">
-                <div className="flex gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-500/20"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/20"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-500/20"></div>
+              <div
+                className="relative rounded-[12px] border border-white/[0.08] bg-[#0f1011] shadow-2xl overflow-hidden aspect-[4/3] transition-transform duration-100 ease-out"
+                style={{
+                  transform: `rotateX(${5 - mousePosition.y * 0.5}deg) rotateY(${mousePosition.x * 0.5}deg)`,
+                }}
+              >
+                {/* Header */}
+                <div className="h-9 border-b border-white/[0.06] flex items-center px-4 gap-2 bg-[#121314]">
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-500/20"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/20"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-green-500/20"></div>
+                  </div>
+                  <div className="flex-1 text-center text-[10px] font-mono text-white/30 tracking-widest uppercase truncate">
+                    Axiom_Core_v4.2.exe
+                  </div>
                 </div>
-                <div className="flex-1 text-center text-[10px] font-mono text-white/30 tracking-widest uppercase truncate">
-                  Axiom_Core_v4.2.exe
-                </div>
-              </div>
 
-              {/* Main Terminal Area (No Sidebar) */}
-              <div className="p-6 font-mono text-xs relative overflow-hidden h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/5 via-[#0f1011] to-[#0f1011]">
-                <div className="space-y-2.5">
-                  {logs.map((log, i) => (
-                    <div
-                      key={i}
-                      className={`animate-in fade-in slide-in-from-left-2 duration-300 ${log.includes("Error") ? "text-red-400" : "text-blue-200/80"}`}
-                    >
-                      <span className="opacity-30 mr-3 text-white">
-                        [{new Date().toLocaleTimeString()}]
-                      </span>
-                      {log}
-                    </div>
-                  ))}
-                  <div className="h-4 w-2 bg-blue-500 animate-pulse inline-block align-middle"></div>
+                {/* Main Terminal Area (No Sidebar) */}
+                <div className="p-6 font-mono text-xs relative overflow-hidden h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/5 via-[#0f1011] to-[#0f1011]">
+                  <div className="space-y-2.5">
+                    {logs.map((log, i) => (
+                      <div
+                        key={i}
+                        className={`animate-in fade-in slide-in-from-left-2 duration-300 ${log.includes("Error") ? "text-red-400" : "text-blue-200/80"}`}
+                      >
+                        <span className="opacity-30 mr-3 text-white">
+                          [
+                          {new Date().toISOString().split("T")[1].split(".")[0]}
+                          ]
+                        </span>
+                        {log}
+                      </div>
+                    ))}
+                    <div className="h-4 w-2 bg-blue-500 animate-pulse inline-block align-middle"></div>
+                  </div>
+                  <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.03] pointer-events-none"></div>
                 </div>
-                <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.03] pointer-events-none"></div>
-              </div>
 
-              {/* Glass Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.03] to-transparent pointer-events-none z-20"></div>
+                {/* Glass Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.03] to-transparent pointer-events-none z-20"></div>
+              </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* Right: Explanation */}
-          <div className="space-y-8 text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono">
-              <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></div>
-              <span>Live Execution Environment</span>
-            </div>
+          <Reveal direction="right" delay={200}>
+            <div className="space-y-8 text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono">
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></div>
+                <span>Live Execution Environment</span>
+              </div>
 
-            <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight leading-tight">
-                Intelligent Execution.
-                <br />
-                <span className="text-white/40">Zero Detection.</span>
-              </h2>
-              <p className="text-linear-text-secondary text-lg leading-relaxed max-w-md">
-                Axiom runs an isolated, headless browser environment that mimics
-                human biometrics to bypass anti-bot systems effortlessly.
-              </p>
-            </div>
+              <div className="space-y-4">
+                <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight leading-tight">
+                  Intelligent Execution.
+                  <br />
+                  <span className="text-white/40">Zero Detection.</span>
+                </h2>
+                <p className="text-linear-text-secondary text-lg leading-relaxed max-w-md">
+                  Axiom runs an isolated, headless browser environment that
+                  mimics human biometrics to bypass anti-bot systems
+                  effortlessly.
+                </p>
+              </div>
 
-            <div className="flex gap-10 border-t border-white/[0.08] pt-12">
-              <div>
-                <div className="text-2xl font-bold text-white font-mono">
-                  <span className="text-emerald-400">0.02</span>s
+              <div className="flex gap-10 border-t border-white/[0.08] pt-12">
+                <div>
+                  <div className="text-2xl font-bold text-white font-mono">
+                    <span className="text-emerald-400">0.02</span>s
+                  </div>
+                  <div className="text-xs uppercase tracking-wider text-white/40 font-semibold mt-1">
+                    Latency
+                  </div>
                 </div>
-                <div className="text-xs uppercase tracking-wider text-white/40 font-semibold mt-1">
-                  Latency
+                <div>
+                  <div className="text-2xl font-bold text-white font-mono">
+                    100%
+                  </div>
+                  <div className="text-xs uppercase tracking-wider text-white/40 font-semibold mt-1">
+                    Uptime
+                  </div>
                 </div>
               </div>
-              <div>
-                <div className="text-2xl font-bold text-white font-mono">
-                  100%
-                </div>
-                <div className="text-xs uppercase tracking-wider text-white/40 font-semibold mt-1">
-                  Uptime
-                </div>
-              </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

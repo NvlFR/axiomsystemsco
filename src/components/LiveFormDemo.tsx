@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Reveal from "@/components/Reveal";
 import {
   Bot,
   CheckCircle2,
@@ -162,208 +163,212 @@ export default function LiveFormDemo() {
     <div className="py-16 bg-[#08090a] border-y border-white/[0.08] relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         {/* Left Content */}
-        <div className="space-y-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono">
-            <Zap className="w-3 h-3 fill-purple-500" />
-            <span>Live Automation Engine</span>
-          </div>
+        <Reveal direction="left">
+          <div className="space-y-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono">
+              <Zap className="w-3 h-3 fill-purple-500" />
+              <span>Live Automation Engine</span>
+            </div>
 
-          <div className="space-y-4">
-            <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight leading-tight">
-              We bypass obstacles.
-              <br />
-              <span className="text-white/40">You get the result.</span>
-            </h2>
-            <p className="text-linear-text-secondary text-lg leading-relaxed max-w-md">
-              Our bots don't just fill forms. They emulate human biometric data
-              to bypass Cloudflare and ReCaptcha V3 invisibly.
-            </p>
-          </div>
+            <div className="space-y-4">
+              <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight leading-tight">
+                We bypass obstacles.
+                <br />
+                <span className="text-white/40">You get the result.</span>
+              </h2>
+              <p className="text-linear-text-secondary text-lg leading-relaxed max-w-md">
+                Our bots don't just fill forms. They emulate human biometric
+                data to bypass Cloudflare and ReCaptcha V3 invisibly.
+              </p>
+            </div>
 
-          <div className="flex gap-12 border-t border-white/[0.08] pt-8">
-            <div>
-              <div className="text-3xl font-bold text-white font-mono tabular-nums">
-                {processedCount.toLocaleString()}
+            <div className="flex gap-12 border-t border-white/[0.08] pt-8">
+              <div>
+                <div className="text-3xl font-bold text-white font-mono tabular-nums">
+                  {processedCount.toLocaleString()}
+                </div>
+                <div className="text-xs uppercase tracking-wider text-white/40 font-semibold mt-1">
+                  Successful Checkouts
+                </div>
               </div>
-              <div className="text-xs uppercase tracking-wider text-white/40 font-semibold mt-1">
-                Successful Checkouts
+              <div>
+                <div className="text-3xl font-bold text-emerald-400 font-mono">
+                  99.8%
+                </div>
+                <div className="text-xs uppercase tracking-wider text-white/40 font-semibold mt-1">
+                  Success Rate
+                </div>
               </div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-emerald-400 font-mono">
-                99.8%
-              </div>
-              <div className="text-xs uppercase tracking-wider text-white/40 font-semibold mt-1">
-                Success Rate
-              </div>
-            </div>
           </div>
-        </div>
+        </Reveal>
 
         {/* Right: Browser Simulator */}
-        <div className="relative group perspective-[1000px]">
-          {/* The Mock Browser Window */}
-          <div className="bg-[#1c1c1e] rounded-xl border border-white/[0.08] shadow-2xl overflow-hidden transform transition-transform duration-700 hover:rotate-y-2 hover:rotate-x-2 relative z-10 w-full aspect-[4/3] flex flex-col">
-            {/* Browser Toolbar */}
-            <div className="h-10 bg-[#2c2c2e] flex items-center px-3 gap-3 border-b border-black/50">
-              <div className="flex gap-1.5 opacity-50">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
-              </div>
-              <div className="flex gap-2 text-white/20">
-                <ChevronLeft className="w-4 h-4" />
-                <ChevronRight className="w-4 h-4" />
-                <RefreshCw
-                  className={`w-4 h-4 ${step === "navigating" ? "animate-spin" : ""}`}
-                />
-              </div>
-              <div className="flex-1 h-7 bg-[#1c1c1e] rounded flex items-center px-3 text-[11px] text-white/60 font-mono truncate">
-                <Lock className="w-3 h-3 mr-2 text-emerald-500" />
-                {url}
-              </div>
-            </div>
-
-            {/* Browser Viewport */}
-            <div className="flex-1 bg-white relative p-4 font-sans flex flex-col items-center justify-center">
-              {/* Website Header Mock */}
-              <div className="w-full h-10 border-b border-gray-100 flex items-center justify-between mb-2">
-                <div className="w-20 h-3 bg-gray-200 rounded"></div>
-                <div className="flex gap-2">
-                  <div className="w-6 h-6 bg-gray-100 rounded-full"></div>
+        <Reveal delay={200} direction="right">
+          <div className="relative group perspective-[1000px]">
+            {/* The Mock Browser Window */}
+            <div className="bg-[#1c1c1e] rounded-xl border border-white/[0.08] shadow-2xl overflow-hidden transform transition-transform duration-700 hover:rotate-y-2 hover:rotate-x-2 relative z-10 w-full aspect-[4/3] flex flex-col">
+              {/* Browser Toolbar */}
+              <div className="h-10 bg-[#2c2c2e] flex items-center px-3 gap-3 border-b border-black/50">
+                <div className="flex gap-1.5 opacity-50">
+                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
                 </div>
-              </div>
-
-              {/* The Checkout Form */}
-              <div className="w-full max-w-sm space-y-2">
-                <div className="h-3 w-28 bg-gray-200 rounded mb-2"></div>
-
-                <div className="space-y-0.5">
-                  <label className="text-[9px] font-bold text-gray-400 uppercase">
-                    Full Name
-                  </label>
-                  <div
-                    className={`h-9 w-full border rounded px-3 flex items-center text-sm font-medium text-gray-900 transition-colors ${field1 ? "border-blue-500 bg-blue-50/50" : "border-gray-200 bg-gray-50"}`}
-                  >
-                    {field1}
-                    <span
-                      className={`w-0.5 h-4 bg-blue-600 animate-pulse ml-0.5 ${step === "filling" && !field2 && !field3 ? "inline-block" : "hidden"}`}
-                    ></span>
-                  </div>
-                </div>
-
-                <div className="space-y-0.5">
-                  <label className="text-[9px] font-bold text-gray-400 uppercase">
-                    Email Address
-                  </label>
-                  <div
-                    className={`h-9 w-full border rounded px-3 flex items-center text-sm font-medium text-gray-900 transition-colors ${field2 ? "border-blue-500 bg-blue-50/50" : "border-gray-200 bg-gray-50"}`}
-                  >
-                    {field2}
-                    <span
-                      className={`w-0.5 h-4 bg-blue-600 animate-pulse ml-0.5 ${step === "filling" && field1 && !field3 ? "inline-block" : "hidden"}`}
-                    ></span>
-                  </div>
-                </div>
-
-                <div className="space-y-0.5">
-                  <label className="text-[9px] font-bold text-gray-400 uppercase">
-                    Payment Method
-                  </label>
-                  <div
-                    className={`h-9 w-full border rounded px-3 flex items-center text-sm font-medium text-gray-900 transition-colors ${field3 ? "border-blue-500 bg-blue-50/50" : "border-gray-200 bg-gray-50"}`}
-                  >
-                    {field3}
-                    <span
-                      className={`w-0.5 h-4 bg-blue-600 animate-pulse ml-0.5 ${step === "filling" && field2 ? "inline-block" : "hidden"}`}
-                    ></span>
-                  </div>
-                </div>
-
-                <div
-                  className={`mt-3 h-10 w-full rounded font-bold text-white flex items-center justify-center transition-all duration-200 ${step === "success" ? "bg-emerald-500" : "bg-black"}`}
-                >
-                  {step === "submitting" ? (
-                    <Loader2 className="w-4 h-4 animate-spin" />
-                  ) : step === "success" ? (
-                    "Order Confirmed"
-                  ) : (
-                    "Place Order"
-                  )}
-                </div>
-              </div>
-              {/* Captcha Overlay */}
-              {step === "captcha" && (
-                <div className="absolute inset-0 bg-white/80 backdrop-blur-sm z-20 flex items-center justify-center">
-                  <div className="bg-white p-4 rounded-lg shadow-2xl border border-gray-100 text-center space-y-3 animate-in fade-in zoom-in duration-300">
-                    <div className="w-12 h-12 mx-auto rounded-full bg-blue-50 flex items-center justify-center relative">
-                      <div
-                        className="absolute inset-0 border-4 border-blue-500 rounded-full"
-                        style={{
-                          clipPath: `inset(0 ${100 - captchaProgress}% 0 0)`,
-                        }}
-                      ></div>
-                      <Bot className="w-6 h-6 text-blue-600" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-bold text-gray-900">
-                        Security Check
-                      </div>
-                      <div className="text-xs text-gray-500">
-                        Bypassing ReCaptcha V3...
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Bot Cursor */}
-              <div
-                className="absolute z-50 w-6 h-6 pointer-events-none transition-all duration-300 ease-out"
-                style={{
-                  top:
-                    step === "filling"
-                      ? field1
-                        ? field2
-                          ? "55%"
-                          : "48%"
-                        : "40%"
-                      : step === "submitting"
-                        ? "85%"
-                        : "10%",
-                  left:
-                    step === "filling"
-                      ? "80%"
-                      : step === "submitting"
-                        ? "50%"
-                        : "10%",
-                  opacity: step === "navigating" ? 0 : 1,
-                }}
-              >
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.65376 12.3673H5.46026L5.31717 12.4976L0.500002 16.8829L0.500002 1.19841L11.7841 12.3673H5.65376Z"
-                    fill="#7C3AED"
-                    stroke="white"
-                    strokeWidth="2"
+                <div className="flex gap-2 text-white/20">
+                  <ChevronLeft className="w-4 h-4" />
+                  <ChevronRight className="w-4 h-4" />
+                  <RefreshCw
+                    className={`w-4 h-4 ${step === "navigating" ? "animate-spin" : ""}`}
                   />
-                </svg>
-                <div className="absolute top-4 left-4 bg-purple-600 text-[10px] text-white px-1.5 py-0.5 rounded font-mono whitespace-nowrap">
-                  Axiom Bot
+                </div>
+                <div className="flex-1 h-7 bg-[#1c1c1e] rounded flex items-center px-3 text-[11px] text-white/60 font-mono truncate">
+                  <Lock className="w-3 h-3 mr-2 text-emerald-500" />
+                  {url}
+                </div>
+              </div>
+
+              {/* Browser Viewport */}
+              <div className="flex-1 bg-white relative p-4 font-sans flex flex-col items-center justify-center">
+                {/* Website Header Mock */}
+                <div className="w-full h-10 border-b border-gray-100 flex items-center justify-between mb-2">
+                  <div className="w-20 h-3 bg-gray-200 rounded"></div>
+                  <div className="flex gap-2">
+                    <div className="w-6 h-6 bg-gray-100 rounded-full"></div>
+                  </div>
+                </div>
+
+                {/* The Checkout Form */}
+                <div className="w-full max-w-sm space-y-2">
+                  <div className="h-3 w-28 bg-gray-200 rounded mb-2"></div>
+
+                  <div className="space-y-0.5">
+                    <label className="text-[9px] font-bold text-gray-400 uppercase">
+                      Full Name
+                    </label>
+                    <div
+                      className={`h-9 w-full border rounded px-3 flex items-center text-sm font-medium text-gray-900 transition-colors ${field1 ? "border-blue-500 bg-blue-50/50" : "border-gray-200 bg-gray-50"}`}
+                    >
+                      {field1}
+                      <span
+                        className={`w-0.5 h-4 bg-blue-600 animate-pulse ml-0.5 ${step === "filling" && !field2 && !field3 ? "inline-block" : "hidden"}`}
+                      ></span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-0.5">
+                    <label className="text-[9px] font-bold text-gray-400 uppercase">
+                      Email Address
+                    </label>
+                    <div
+                      className={`h-9 w-full border rounded px-3 flex items-center text-sm font-medium text-gray-900 transition-colors ${field2 ? "border-blue-500 bg-blue-50/50" : "border-gray-200 bg-gray-50"}`}
+                    >
+                      {field2}
+                      <span
+                        className={`w-0.5 h-4 bg-blue-600 animate-pulse ml-0.5 ${step === "filling" && field1 && !field3 ? "inline-block" : "hidden"}`}
+                      ></span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-0.5">
+                    <label className="text-[9px] font-bold text-gray-400 uppercase">
+                      Payment Method
+                    </label>
+                    <div
+                      className={`h-9 w-full border rounded px-3 flex items-center text-sm font-medium text-gray-900 transition-colors ${field3 ? "border-blue-500 bg-blue-50/50" : "border-gray-200 bg-gray-50"}`}
+                    >
+                      {field3}
+                      <span
+                        className={`w-0.5 h-4 bg-blue-600 animate-pulse ml-0.5 ${step === "filling" && field2 ? "inline-block" : "hidden"}`}
+                      ></span>
+                    </div>
+                  </div>
+
+                  <div
+                    className={`mt-3 h-10 w-full rounded font-bold text-white flex items-center justify-center transition-all duration-200 ${step === "success" ? "bg-emerald-500" : "bg-black"}`}
+                  >
+                    {step === "submitting" ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : step === "success" ? (
+                      "Order Confirmed"
+                    ) : (
+                      "Place Order"
+                    )}
+                  </div>
+                </div>
+                {/* Captcha Overlay */}
+                {step === "captcha" && (
+                  <div className="absolute inset-0 bg-white/80 backdrop-blur-sm z-20 flex items-center justify-center">
+                    <div className="bg-white p-4 rounded-lg shadow-2xl border border-gray-100 text-center space-y-3 animate-in fade-in zoom-in duration-300">
+                      <div className="w-12 h-12 mx-auto rounded-full bg-blue-50 flex items-center justify-center relative">
+                        <div
+                          className="absolute inset-0 border-4 border-blue-500 rounded-full"
+                          style={{
+                            clipPath: `inset(0 ${100 - captchaProgress}% 0 0)`,
+                          }}
+                        ></div>
+                        <Bot className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-bold text-gray-900">
+                          Security Check
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          Bypassing ReCaptcha V3...
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Bot Cursor */}
+                <div
+                  className="absolute z-50 w-6 h-6 pointer-events-none transition-all duration-300 ease-out"
+                  style={{
+                    top:
+                      step === "filling"
+                        ? field1
+                          ? field2
+                            ? "55%"
+                            : "48%"
+                          : "40%"
+                        : step === "submitting"
+                          ? "85%"
+                          : "10%",
+                    left:
+                      step === "filling"
+                        ? "80%"
+                        : step === "submitting"
+                          ? "50%"
+                          : "10%",
+                    opacity: step === "navigating" ? 0 : 1,
+                  }}
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.65376 12.3673H5.46026L5.31717 12.4976L0.500002 16.8829L0.500002 1.19841L11.7841 12.3673H5.65376Z"
+                      fill="#7C3AED"
+                      stroke="white"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                  <div className="absolute top-4 left-4 bg-purple-600 text-[10px] text-white px-1.5 py-0.5 rounded font-mono whitespace-nowrap">
+                    Axiom Bot
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Back Glow */}
-          <div className="absolute -inset-4 bg-purple-500/20 blur-3xl -z-10 rounded-full opacity-50 animate-pulse"></div>
-        </div>
+            {/* Back Glow */}
+            <div className="absolute -inset-4 bg-purple-500/20 blur-3xl -z-10 rounded-full opacity-50 animate-pulse"></div>
+          </div>
+        </Reveal>
       </div>
     </div>
   );

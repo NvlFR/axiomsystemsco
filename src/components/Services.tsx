@@ -126,6 +126,10 @@ const services = [
   },
 ];
 
+import Reveal from "@/components/Reveal";
+
+// ... imports remain the same
+
 export default function Services() {
   const [selectedService, setSelectedService] = useState<
     (typeof services)[0] | null
@@ -142,122 +146,128 @@ export default function Services() {
 
       <div className="max-w-[1200px] mx-auto space-y-20">
         {/* Section Header */}
-        <div className="text-center space-y-6 max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-zinc-400 text-xs font-mono mb-4">
-            <Bot className="w-3.5 h-3.5" />
-            <span>Capabilities</span>
+        <Reveal>
+          <div className="text-center space-y-6 max-w-2xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-zinc-400 text-xs font-mono mb-4">
+              <Bot className="w-3.5 h-3.5" />
+              <span>Capabilities</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white">
+              Solutions We Build.
+            </h2>
+            <p className="text-xl text-zinc-400 leading-relaxed">
+              From simple scripts to complex distributed systems, we engineer
+              the automation tools your business needs to win.
+            </p>
           </div>
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white">
-            Solutions We Build.
-          </h2>
-          <p className="text-xl text-zinc-400 leading-relaxed">
-            From simple scripts to complex distributed systems, we engineer the
-            automation tools your business needs to win.
-          </p>
-        </div>
+        </Reveal>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           {services.map((service, index) => (
-            <div
+            <Reveal
               key={index}
-              onClick={() => setSelectedService(service)}
-              className={cn(
-                "group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0f1011] transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 cursor-pointer",
-                service.className,
-                service.border,
-              )}
+              delay={index * 100}
+              className={cn(service.className)} // Pass grid span classes to wrapper
             >
-              {/* Active Gradient Background */}
               <div
+                onClick={() => setSelectedService(service)}
                 className={cn(
-                  "absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-700",
-                  service.gradient,
+                  "group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0f1011] transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 cursor-pointer h-full", // Added h-full
+                  service.border,
                 )}
-              />
+              >
+                {/* Active Gradient Background */}
+                <div
+                  className={cn(
+                    "absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-700",
+                    service.gradient,
+                  )}
+                />
 
-              {/* Background Patterns (SVG) */}
-              <div className="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity duration-500 pointer-events-none">
-                {service.pattern === "circuit" && (
-                  <svg className="w-full h-full" width="100%" height="100%">
-                    <pattern
-                      id="circuit-pattern"
-                      x="0"
-                      y="0"
-                      width="40"
-                      height="40"
-                      patternUnits="userSpaceOnUse"
-                    >
-                      <path
-                        d="M0 20 L40 20 M20 0 L20 40"
-                        stroke="currentColor"
-                        strokeWidth="1"
-                        fill="none"
+                {/* Background Patterns (SVG) */}
+                <div className="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity duration-500 pointer-events-none">
+                  {service.pattern === "circuit" && (
+                    <svg className="w-full h-full" width="100%" height="100%">
+                      <pattern
+                        id="circuit-pattern"
+                        x="0"
+                        y="0"
+                        width="40"
+                        height="40"
+                        patternUnits="userSpaceOnUse"
+                      >
+                        <path
+                          d="M0 20 L40 20 M20 0 L20 40"
+                          stroke="currentColor"
+                          strokeWidth="1"
+                          fill="none"
+                        />
+                        <circle cx="20" cy="20" r="2" fill="currentColor" />
+                      </pattern>
+                      <rect
+                        width="100%"
+                        height="100%"
+                        fill="url(#circuit-pattern)"
                       />
-                      <circle cx="20" cy="20" r="2" fill="currentColor" />
-                    </pattern>
-                    <rect
-                      width="100%"
-                      height="100%"
-                      fill="url(#circuit-pattern)"
-                    />
-                  </svg>
-                )}
-                {service.pattern === "dots" && (
-                  <div className="abolute inset-0 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
-                )}
-                {service.pattern === "grid" && (
-                  <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-                )}
-                {service.pattern === "data" && (
-                  <div className="absolute inset-0 flex flex-col gap-2 p-4 font-mono text-[10px] leading-none select-none overflow-hidden opacity-50">
-                    {Array.from({ length: 10 }).map((_, i) => (
-                      <div key={i} className="whitespace-nowrap">
-                        {Math.random().toString(36).substring(2)}
-                      </div>
-                    ))}
-                  </div>
-                )}
-                {service.pattern === "code" && (
-                  <div className="absolute right-0 bottom-0 p-8 opacity-20">
-                    <Code2 className="w-32 h-32" />
-                  </div>
-                )}
-              </div>
-
-              {/* Content */}
-              <div className="relative z-10 p-8 h-full flex flex-col justify-between">
-                <div className="space-y-6">
-                  {/* Icon */}
-                  <div
-                    className={cn(
-                      "w-12 h-12 rounded-xl bg-white/[0.03] border border-white/[0.08] flex items-center justify-center transition-colors duration-500 group-hover:bg-white/[0.08]",
-                      service.iconColor,
-                    )}
-                  >
-                    <service.icon className="w-6 h-6" />
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-2xl font-semibold text-white tracking-tight group-hover:text-white transition-colors">
-                    {service.title}
-                  </h3>
+                    </svg>
+                  )}
+                  {service.pattern === "dots" && (
+                    <div className="abolute inset-0 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                  )}
+                  {service.pattern === "grid" && (
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+                  )}
+                  {service.pattern === "data" && (
+                    <div className="absolute inset-0 flex flex-col gap-2 p-4 font-mono text-[10px] leading-none select-none overflow-hidden opacity-50">
+                      {Array.from({ length: 10 }).map((_, i) => (
+                        <div key={i} className="whitespace-nowrap">
+                          {Math.random().toString(36).substring(2)}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {service.pattern === "code" && (
+                    <div className="absolute right-0 bottom-0 p-8 opacity-20">
+                      <Code2 className="w-32 h-32" />
+                    </div>
+                  )}
                 </div>
 
-                {/* Description */}
-                <div className="mt-8 space-y-4">
-                  <p className="text-zinc-400 text-sm leading-relaxed max-w-sm group-hover:text-zinc-300 transition-colors">
-                    {service.description}
-                  </p>
+                {/* Content */}
+                <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+                  <div className="space-y-6">
+                    {/* Icon */}
+                    <div
+                      className={cn(
+                        "w-12 h-12 rounded-xl bg-white/[0.03] border border-white/[0.08] flex items-center justify-center transition-colors duration-500 group-hover:bg-white/[0.08]",
+                        service.iconColor,
+                      )}
+                    >
+                      <service.icon className="w-6 h-6" />
+                    </div>
 
-                  {/* Learn More Link */}
-                  <div className="flex items-center gap-2 text-xs font-medium text-white/40 group-hover:text-white transition-colors uppercase tracking-wider">
-                    <span>Explore Solution</span>
-                    <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+                    {/* Title */}
+                    <h3 className="text-2xl font-semibold text-white tracking-tight group-hover:text-white transition-colors">
+                      {service.title}
+                    </h3>
+                  </div>
+
+                  {/* Description */}
+                  <div className="mt-8 space-y-4">
+                    <p className="text-zinc-400 text-sm leading-relaxed max-w-sm group-hover:text-zinc-300 transition-colors">
+                      {service.description}
+                    </p>
+
+                    {/* Learn More Link */}
+                    <div className="flex items-center gap-2 text-xs font-medium text-white/40 group-hover:text-white transition-colors uppercase tracking-wider">
+                      <span>Explore Solution</span>
+                      <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

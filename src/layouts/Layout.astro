@@ -1,5 +1,6 @@
 ---
 import '@/styles/globals.css'
+import Logo from '@/components/Logo';
 import { Button } from '@/components/ui/button';
 import UrgencyBar from '@/components/UrgencyBar';
 import ContactModal from '@/components/ContactModal';
@@ -38,11 +39,8 @@ const { title } = Astro.props;
       <div class="max-w-[1240px] mx-auto px-6 h-[64px] flex items-center justify-between">
         
         {/* Logo Area */}
-        <a href="/" class="flex items-center gap-3 decoration-0 group">
-          <div class="w-5 h-5 rounded-[4px] bg-white flex items-center justify-center text-black font-bold text-[10px] group-hover:scale-90 transition-transform">
-            A
-          </div>
-          <span class="text-[14px] font-semibold text-white tracking-tight">AxiomSystemsCo</span>
+        <a href="/" class="decoration-0 group">
+          <Logo client:load withText />
         </a>
 
         {/* Center Links */}
@@ -54,14 +52,12 @@ const { title } = Astro.props;
         </div>
 
         <div class="flex items-center gap-4">
-          <Button 
-            client:load
-            onClick={() => window.dispatchEvent(new CustomEvent('open-contact-modal'))}
-            size="sm" 
-            className="h-[32px] px-3.5 bg-white text-black hover:bg-[#e0e0e0] border-0 font-medium transition-all rounded-[6px] text-[13px] shadow-sm cursor-pointer"
+          <button
+            onclick="window.dispatchEvent(new CustomEvent('open-contact-modal'))"
+            class="h-[32px] px-3.5 bg-white text-black hover:bg-[#e0e0e0] border-0 font-medium transition-all rounded-[6px] text-[13px] shadow-sm cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
           >
             Start Project
-          </Button>
+          </button>
         </div>
       </div>
     </nav>
