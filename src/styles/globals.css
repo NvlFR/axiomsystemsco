@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    /* ... light mode defaults kept for safety, though mostly unused in dark project ... */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Linear.app #08090a -> HSL conversion approx 210 11% 3.5% */
+    --background: 210 11% 3.5%;
+
+    /* Text #f7f8f8 -> HSL 180 8% 97% */
+    --foreground: 180 8% 97%;
+
+    /* Card #0f1011 -> HSL 210 6% 6.3% */
+    --card: 210 6% 6.3%;
+    --card-foreground: 180 8% 97%;
+
+    --popover: 210 11% 3.5%;
+    --popover-foreground: 180 8% 97%;
+
+    /* Electric Purple/Blue Primary kept as branding accent */
+    --primary: 252 87% 67%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 6% 12%;
+    --secondary-foreground: 180 8% 97%;
+
+    --muted: 210 6% 12%;
+    --muted-foreground: 215 10% 65%; /* #8a8f98 */
+
+    --accent: 210 6% 12%;
+    --accent-foreground: 180 8% 97%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 6% 12%;
+    --input: 210 6% 12%;
+    --ring: 252 87% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1; /* Essential for Inter to look correct */
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
