@@ -32,7 +32,7 @@ export default function ContactModal() {
     e.preventDefault();
     const text = `INITIATING PARTNERSHIP REQUEST\n\n- Client Identity: ${name}\n- Contact: ${phone}\n- Service Category: ${service || "Not Specified"}\n- Estimated Budget: ${budget || "Not Specified"}\n- Mission Objective: ${requirement}\n\n[System] Awaiting Engineer Approval...`;
     const encodedText = encodeURIComponent(text);
-    const phoneNumber = "6281234567890"; // Example number
+    const phoneNumber = "6285199256640"; // Example number
     window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, "_blank");
     setIsOpen(false);
   };

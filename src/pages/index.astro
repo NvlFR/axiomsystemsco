@@ -9,6 +9,10 @@ import FloatingCTA from '@/components/FloatingCTA';
 import LiveFormDemo from '@/components/LiveFormDemo';
 import DataExtractionDemo from '@/components/DataExtractionDemo';
 import WorkflowDemo from '@/components/WorkflowDemo';
+import TechStack from '@/components/TechStack';
+import Metrics from '@/components/Metrics';
+import ComparisonTable from '@/components/ComparisonTable';
+import PricingCalculator from '@/components/PricingCalculator';
 import Footer from '@/components/Footer';
 import { Command } from 'lucide-react';
 ---
@@ -20,9 +24,13 @@ import { Command } from 'lucide-react';
     <LiveFormDemo client:visible />
     <DataExtractionDemo client:visible />
     <WorkflowDemo client:visible />
+    <TechStack client:visible />
+    <Metrics client:visible />
 
     <Process client:visible />
     <Services client:visible />
+    <ComparisonTable client:visible />
+    <PricingCalculator client:visible />
     <FAQ client:visible />
     <OrderForm client:visible />
     <FloatingCTA client:load />

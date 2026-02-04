@@ -90,12 +90,17 @@ export default {
           "50%": { backgroundPosition: "100% 100%" },
           "100%": { backgroundPosition: "0% 0%" },
         },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in-up": "fade-in-up 0.8s ease-out forwards", // Slower, more elegant
+        "fade-in-up": "fade-in-up 0.8s ease-out forwards",
         shine: "shine 8s ease-in-out infinite",
+        marquee: "marquee var(--duration) linear infinite",
       },
       fontFamily: {
         sans: ['"Inter"', "Inter", "system-ui", "sans-serif"], // Enforce Inter

@@ -5,7 +5,7 @@ export default function FloatingCTA() {
   const handleClick = () => {
     const text = `Hello, I'm interested in a custom bot project.`;
     const encodedText = encodeURIComponent(text);
-    const phoneNumber = "6281234567890";
+    const phoneNumber = "6285199256640";
     window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, "_blank");
   };
 
