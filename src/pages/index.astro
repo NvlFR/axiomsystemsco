@@ -13,6 +13,7 @@ import TechStack from '@/components/TechStack';
 import Metrics from '@/components/Metrics';
 import ComparisonTable from '@/components/ComparisonTable';
 import PricingCalculator from '@/components/PricingCalculator';
+import BookingModal from '@/components/BookingModal';
 import Footer from '@/components/Footer';
 import { Command } from 'lucide-react';
 ---
@@ -34,6 +35,7 @@ import { Command } from 'lucide-react';
     <FAQ client:visible />
     <OrderForm client:visible />
     <FloatingCTA client:load />
+    <BookingModal client:load />
   </main>
   <Footer client:visible />
 </Layout>
