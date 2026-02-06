@@ -126,15 +126,15 @@ export default function Hero() {
         </div>
 
         {/* Provocative Headline (The new Hook) */}
-        <h1 className="animate-fade-in-up [animation-delay:200ms] text-[56px] md:text-[80px] lg:text-[88px] font-semibold tracking-tighter leading-[0.9] text-white">
+        <h1 className="animate-fade-in-up [animation-delay:200ms] text-[48px] md:text-[80px] lg:text-[88px] font-semibold tracking-tighter leading-[0.95] md:leading-[0.9] text-white">
           The End of{" "}
-          <span className="text-white/50 whitespace-nowrap">Manual Work.</span>
-          <div className="mt-2 flex flex-row items-center justify-start w-full text-3xl md:text-5xl font-normal text-linear-text-secondary tracking-tight min-h-[1.5em]">
-            <span className="mr-3 whitespace-nowrap">
-              It's time to automate your
-            </span>
+          <span className="text-white/70 md:text-white/50 whitespace-nowrap">
+            Manual Work.
+          </span>
+          <div className="mt-4 md:mt-2 w-full text-2xl md:text-5xl font-normal text-linear-text-secondary tracking-tight">
+            <span>It's time to automate your </span>
             <span
-              className={`bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400 font-semibold inline-block text-left min-w-[120px] transition-all duration-500 ease-in-out ${
+              className={`bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400 font-semibold inline-block transition-all duration-500 ease-in-out ${
                 fade
                   ? "opacity-100 transform translate-y-0 filter blur-0"
                   : "opacity-0 transform translate-y-4 filter blur-sm"
@@ -146,28 +146,28 @@ export default function Hero() {
         </h1>
 
         {/* Subheadline */}
-        <p className="animate-fade-in-up [animation-delay:400ms] text-[18px] md:text-[21px] text-linear-text-secondary max-w-2xl mr-auto leading-relaxed font-normal tracking-wide pt-1 [text-wrap:balance]">
+        <p className="animate-fade-in-up [animation-delay:400ms] text-[19px] md:text-[21px] text-zinc-300 md:text-linear-text-secondary max-w-2xl mr-auto leading-relaxed font-normal tracking-wide pt-2 [text-wrap:balance]">
           The era of manual work is over. AxiomSystemsCo builds the{" "}
           <span className="text-white">infrastructure</span> you need to scale
           without adding headcount.
         </p>
 
         {/* CTA Buttons */}
-        <div className="animate-fade-in-up [animation-delay:600ms] flex flex-col sm:flex-row gap-4 justify-start pt-4 items-center sm:items-start">
+        <div className="animate-fade-in-up [animation-delay:600ms] flex flex-col sm:flex-row gap-4 justify-start pt-6 items-center sm:items-start w-full sm:w-auto">
           <Button
             onClick={() =>
               window.dispatchEvent(new CustomEvent("open-contact-modal"))
             }
-            className="h-[48px] px-8 rounded-[8px] bg-white text-black hover:bg-gray-200 transition-all text-[15px] font-[600] border-0 scale-100 hover:scale-105 active:scale-95 duration-200"
+            className="h-[52px] w-full sm:w-auto px-8 rounded-[12px] bg-white text-black hover:bg-gray-200 transition-all text-[16px] font-[600] border-0 scale-100 hover:scale-105 active:scale-95 duration-200"
           >
             Automate My Business
             <ArrowRight className="w-4 h-4 ml-2 opacity-60" />
           </Button>
 
-          <a href="#services">
+          <a href="#services" className="w-full sm:w-auto">
             <Button
               variant="ghost"
-              className="h-[48px] px-8 rounded-[8px] text-linear-text-secondary hover:text-white hover:bg-white/[0.04] text-[15px] font-medium transition-all"
+              className="h-[52px] w-full sm:w-auto px-8 rounded-[12px] text-zinc-300 md:text-linear-text-secondary hover:text-white hover:bg-white/[0.04] text-[16px] font-medium transition-all"
             >
               See Use Cases
             </Button>
@@ -179,7 +179,7 @@ export default function Hero() {
       {/* Split Layout: Terminal (Left) & Explanation (Right) */}
       {/* 3D Parallax Glass Window */}
       {/* Split Layout: Terminal (Left) & Explanation (Right) */}
-      <div className="relative mt-48 md:mt-64 w-full max-w-6xl mx-auto px-6">
+      <div className="relative mt-24 md:mt-64 w-full max-w-6xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left: Terminal Window (Smaller, No Sidebar) */}
           <Reveal direction="left">
@@ -215,7 +215,10 @@ export default function Hero() {
                         key={i}
                         className={`animate-in fade-in slide-in-from-left-2 duration-300 ${log.includes("Error") ? "text-red-400" : "text-blue-200/80"}`}
                       >
-                        <span className="opacity-30 mr-3 text-white">
+                        <span
+                          className="opacity-30 mr-3 text-white"
+                          suppressHydrationWarning
+                        >
                           [
                           {new Date().toISOString().split("T")[1].split(".")[0]}
                           ]

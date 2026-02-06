@@ -105,6 +105,9 @@ export default function Process() {
               <div className="absolute top-1/2 -translate-y-1/2 left-2/3 w-20 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent animate-[shimmer_3s_infinite_linear_2s]"></div>
             </div>
 
+            {/* Connector Pipes (Mobile Vertical) */}
+            <div className="lg:hidden absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[2px] bg-white/[0.05] z-0"></div>
+
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
               {steps.map((step, index) => (
                 <div

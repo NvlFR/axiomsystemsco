@@ -36,6 +36,7 @@ export default function PricingCalculator() {
 
   const minPrice = selectedBot.basePrice * selectedComplexity.multiplier;
   const maxPrice = minPrice * 1.3; // 30% buffer
+  const marketPrice = Math.round(minPrice * 2.5); // Anchor Price (2.5x higher)
 
   return (
     <section className="py-24 px-6 relative border-t border-white/[0.08] bg-[#08090a] overflow-hidden">
@@ -142,24 +143,41 @@ export default function PricingCalculator() {
             </div>
 
             {/* Price Output Panel */}
-            <div className="lg:col-span-4 bg-gradient-to-br from-indigo-900/20 to-[#08090a] border-l border-white/[0.08] p-8 md:p-12 flex flex-col justify-center relative">
+            <div className="lg:col-span-4 bg-gradient-to-br from-indigo-900/20 to-[#08090a] border-t lg:border-t-0 lg:border-l border-white/[0.08] p-8 md:p-12 flex flex-col justify-center relative">
               <div className="absolute top-0 right-0 p-32 bg-indigo-500/10 blur-[80px] rounded-full pointer-events-none"></div>
 
               <div className="relative z-10 space-y-8">
-                <div className="space-y-2">
-                  <p className="text-sm font-mono text-indigo-300">
+                <div className="space-y-4">
+                  <p className="text-sm font-mono text-indigo-300 flex items-center gap-2">
                     ESTIMATED INVESTMENT
+                    <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-green-500/20 text-green-400 border border-green-500/30">
+                      SAVE 60%
+                    </span>
                   </p>
-                  <div className="text-4xl md:text-5xl font-bold text-white tracking-tight">
-                    ${minPrice.toLocaleString()}{" "}
-                    <span className="text-2xl text-zinc-500 font-normal">
-                      -
-                    </span>{" "}
-                    ${maxPrice.toLocaleString()}
+                  <div className="space-y-2">
+                    {/* Anchor Price */}
+                    <div className="flex items-center gap-3">
+                      <span className="text-lg text-zinc-500 line-through decoration-red-500/50 decoration-2">
+                        ${marketPrice.toLocaleString()}
+                      </span>
+                      <span className="text-xs text-zinc-600 font-medium uppercase tracking-wider">
+                        (Standard Agency Rate)
+                      </span>
+                    </div>
+                    {/* Axiom Price */}
+                    <div className="text-4xl md:text-5xl font-bold text-white tracking-tight flex items-baseline gap-2">
+                      <span>${minPrice.toLocaleString()}</span>
+                      <span className="text-2xl text-zinc-600 font-normal">
+                        -
+                      </span>
+                      <span className="text-3xl text-zinc-400">
+                        ${Math.round(maxPrice).toLocaleString()}
+                      </span>
+                    </div>
                   </div>
-                  <p className="text-xs text-zinc-500">
-                    *Final quote may vary based on specific requirements and
-                    logic complexity.
+                  <p className="text-xs text-zinc-500 max-w-[300px]">
+                    *We use proprietary automation cores to cut development
+                    hours by 60%, passing the savings to you.
                   </p>
                 </div>
 

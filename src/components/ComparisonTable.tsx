@@ -62,66 +62,72 @@ export default function ComparisonTable() {
 
         <Reveal delay={200}>
           <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0f1011]/80 backdrop-blur-sm">
-            {/* Header Row */}
-            <div className="grid grid-cols-12 border-b border-white/[0.08] bg-white/[0.02]">
-              <div className="col-span-4 p-6 text-sm font-semibold text-zinc-500 uppercase tracking-wider flex items-center">
-                Comparison
-              </div>
-              <div className="col-span-4 p-6 text-center border-l border-white/[0.08]">
-                <div className="text-zinc-400 font-semibold mb-1">
-                  Generic Freelancer
-                </div>
-                <div className="text-xs text-zinc-600">High Risk, Low Cost</div>
-              </div>
-              <div className="col-span-4 p-6 text-center border-l border-white/[0.08] bg-emerald-500/5 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-emerald-500"></div>
-                <div className="text-white font-bold mb-1 flex items-center justify-center gap-2">
-                  <BadgeCheck className="w-4 h-4 text-emerald-500" />
-                  Axiom Systems
-                </div>
-                <div className="text-xs text-emerald-400/80">
-                  Enterprise Standard
-                </div>
-              </div>
-            </div>
-
-            {/* Rows */}
-            <div className="divide-y divide-white/[0.04]">
-              {features.map((feature, i) => (
-                <div
-                  key={i}
-                  className="grid grid-cols-12 group hover:bg-white/[0.02] transition-colors"
-                >
-                  <div className="col-span-4 p-6 text-sm font-medium text-zinc-300 flex items-center">
-                    {feature.name}
+            <div className="overflow-x-auto">
+              <div className="min-w-[640px]">
+                {/* Header Row */}
+                <div className="grid grid-cols-12 border-b border-white/[0.08] bg-white/[0.02]">
+                  <div className="col-span-4 p-6 text-sm font-semibold text-zinc-500 uppercase tracking-wider flex items-center">
+                    Comparison
                   </div>
-
-                  {/* Freelancer Column */}
-                  <div className="col-span-4 p-6 border-l border-white/[0.08] flex flex-col items-center justify-center text-center gap-2">
-                    <feature.freelancerIcon
-                      className={cn(
-                        "w-5 h-5",
-                        feature.freelancerIcon === Check
-                          ? "text-emerald-500"
-                          : "text-red-500/50",
-                      )}
-                    />
-                    <span className="text-sm text-zinc-500">
-                      {feature.freelancer}
-                    </span>
+                  <div className="col-span-4 p-6 text-center border-l border-white/[0.08]">
+                    <div className="text-zinc-400 font-semibold mb-1">
+                      Generic Freelancer
+                    </div>
+                    <div className="text-xs text-zinc-600">
+                      High Risk, Low Cost
+                    </div>
                   </div>
-
-                  {/* Axiom Column */}
-                  <div className="col-span-4 p-6 border-l border-white/[0.08] bg-emerald-500/[0.02] flex flex-col items-center justify-center text-center gap-2 relative">
-                    {/* Glow effect on hover */}
-                    <div className="absolute inset-0 bg-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <feature.axiomIcon className="w-6 h-6 text-emerald-400 drop-shadow-[0_0_8px_rgba(52,211,153,0.5)]" />
-                    <span className="text-sm font-medium text-white">
-                      {feature.axiom}
-                    </span>
+                  <div className="col-span-4 p-6 text-center border-l border-white/[0.08] bg-emerald-500/5 relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-emerald-500"></div>
+                    <div className="text-white font-bold mb-1 flex items-center justify-center gap-2">
+                      <BadgeCheck className="w-4 h-4 text-emerald-500" />
+                      Axiom Systems
+                    </div>
+                    <div className="text-xs text-emerald-400/80">
+                      Enterprise Standard
+                    </div>
                   </div>
                 </div>
-              ))}
+
+                {/* Rows */}
+                <div className="divide-y divide-white/[0.04]">
+                  {features.map((feature, i) => (
+                    <div
+                      key={i}
+                      className="grid grid-cols-12 group hover:bg-white/[0.02] transition-colors"
+                    >
+                      <div className="col-span-4 p-6 text-sm font-medium text-zinc-300 flex items-center">
+                        {feature.name}
+                      </div>
+
+                      {/* Freelancer Column */}
+                      <div className="col-span-4 p-6 border-l border-white/[0.08] flex flex-col items-center justify-center text-center gap-2">
+                        <feature.freelancerIcon
+                          className={cn(
+                            "w-5 h-5",
+                            feature.freelancerIcon === Check
+                              ? "text-emerald-500"
+                              : "text-red-500/50",
+                          )}
+                        />
+                        <span className="text-sm text-zinc-500">
+                          {feature.freelancer}
+                        </span>
+                      </div>
+
+                      {/* Axiom Column */}
+                      <div className="col-span-4 p-6 border-l border-white/[0.08] bg-emerald-500/[0.02] flex flex-col items-center justify-center text-center gap-2 relative">
+                        {/* Glow effect on hover */}
+                        <div className="absolute inset-0 bg-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <feature.axiomIcon className="w-6 h-6 text-emerald-400 drop-shadow-[0_0_8px_rgba(52,211,153,0.5)]" />
+                        <span className="text-sm font-medium text-white">
+                          {feature.axiom}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 

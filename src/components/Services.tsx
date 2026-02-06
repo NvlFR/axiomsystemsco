@@ -163,7 +163,7 @@ export default function Services() {
         </Reveal>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pb-8">
           {services.map((service, index) => (
             <Reveal
               key={index}
@@ -282,7 +282,7 @@ export default function Services() {
           ></div>
 
           {/* Modal Content */}
-          <div className="relative w-full max-w-2xl bg-[#0f1011] border border-white/[0.08] rounded-2xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300">
+          <div className="relative w-full max-w-2xl bg-[#0f1011] border border-white/[0.08] rounded-2xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300 max-h-[90vh] overflow-y-auto">
             {/* Header Gradient */}
             <div
               className={cn(

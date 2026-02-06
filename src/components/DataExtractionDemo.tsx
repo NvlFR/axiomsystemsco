@@ -75,11 +75,11 @@ export default function DataExtractionDemo() {
 
   return (
     <section className="py-24 bg-[#08090a] border-b border-white/[0.08] relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <Reveal direction="left">
           <div className="relative group perspective-[1000px]">
             {/* Main Container */}
-            <div className="bg-[#0f1011] rounded-xl border border-white/[0.08] shadow-2xl overflow-hidden aspect-[4/3] flex flex-col relative z-10 transition-transform duration-500 group-hover:rotate-x-2 group-hover:rotate-y-2">
+            <div className="bg-[#0f1011] rounded-xl border border-white/[0.08] shadow-2xl overflow-hidden aspect-[4/3] flex flex-col relative z-10 transition-transform duration-500 md:group-hover:rotate-x-2 md:group-hover:rotate-y-2">
               {/* Header */}
               <div className="h-10 border-b border-white/[0.06] flex items-center px-4 justify-between bg-[#121314]">
                 <div className="flex items-center gap-2">
@@ -96,13 +96,13 @@ export default function DataExtractionDemo() {
                 </div>
               </div>
 
-              <div className="flex-1 flex overflow-hidden">
+              <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
                 {/* Raw Stream Zone */}
-                <div className="flex-1 p-4 font-mono text-[10px] text-gray-500 border-r border-white/[0.06] bg-[#0A0A0A] relative overflow-hidden">
-                  <div className="absolute top-2 right-2 text-[9px] text-white/20 uppercase">
+                <div className="w-full h-1/2 md:w-1/2 md:h-full p-2 md:p-4 font-mono text-[9px] md:text-[10px] text-gray-500 border-b md:border-b-0 md:border-r border-white/[0.06] bg-[#0A0A0A] relative overflow-hidden">
+                  <div className="absolute top-2 right-2 text-[9px] text-white/20 uppercase hidden md:block">
                     Raw Stream
                   </div>
-                  <div className="flex flex-col gap-1.5 mt-4">
+                  <div className="flex flex-col gap-0.5 md:gap-1.5 mt-1 md:mt-4">
                     {logs.map((log, i) => (
                       <div
                         key={i}
@@ -117,21 +117,21 @@ export default function DataExtractionDemo() {
                 </div>
 
                 {/* Extracted Zone */}
-                <div className="w-1/2 bg-[#0f1011] flex flex-col">
-                  <div className="p-3 border-b border-white/[0.06] flex justify-between items-center">
+                <div className="w-full h-1/2 md:w-1/2 md:h-full bg-[#0f1011] flex flex-col">
+                  <div className="p-2 md:p-3 shrink-0 border-b border-white/[0.06] flex justify-between items-center">
                     <span className="text-[10px] font-semibold text-white/60">
                       Structured Output
                     </span>
                     <FileJson className="w-3.5 h-3.5 text-orange-400" />
                   </div>
-                  <div className="flex-1 p-3 space-y-2 overflow-hidden">
+                  <div className="flex-1 p-2 md:p-3 space-y-1.5 md:space-y-2 overflow-hidden">
                     {extractedRows.map((row, i) => (
                       <div
                         key={row.id + i}
-                        className="bg-white/[0.03] rounded border border-white/[0.06] p-2 animate-in slide-in-from-right-4 fade-in duration-300"
+                        className="bg-white/[0.03] rounded border border-white/[0.06] p-1.5 md:p-2 animate-in slide-in-from-right-4 fade-in duration-300"
                       >
-                        <div className="flex justify-between items-start mb-1">
-                          <span className="text-[11px] text-white font-medium">
+                        <div className="flex justify-between items-start mb-0.5 md:mb-1">
+                          <span className="text-[10px] md:text-[11px] text-white font-medium">
                             {row.product}
                           </span>
                           <span className="text-[10px] text-emerald-400">
@@ -167,12 +167,12 @@ export default function DataExtractionDemo() {
             </div>
 
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight leading-tight">
+              <h2 className="text-4xl md:text-5xl font-semibold text-white tracking-tight leading-[0.95] md:leading-tight">
                 Turn the web into your
                 <br />
                 <span className="text-white/40">private database.</span>
               </h2>
-              <p className="text-linear-text-secondary text-lg leading-relaxed max-w-md">
+              <p className="text-zinc-300 md:text-linear-text-secondary text-lg leading-relaxed max-w-md">
                 Unstructured HTML, hidden APIs, or complex SPAs? No problem. Our
                 bots parse chaos into clean, actionable JSON in milliseconds.
               </p>
@@ -183,7 +183,7 @@ export default function DataExtractionDemo() {
                 <div className="text-3xl font-bold text-white font-mono tabular-nums">
                   {(scannedCount * 14).toLocaleString()}
                 </div>
-                <div className="text-xs uppercase tracking-wider text-white/40 font-semibold mt-1">
+                <div className="text-xs uppercase tracking-wider text-white/50 font-semibold mt-1">
                   Data Points
                 </div>
               </div>
@@ -191,7 +191,7 @@ export default function DataExtractionDemo() {
                 <div className="text-3xl font-bold text-orange-400 font-mono">
                   JSON
                 </div>
-                <div className="text-xs uppercase tracking-wider text-white/40 font-semibold mt-1">
+                <div className="text-xs uppercase tracking-wider text-white/50 font-semibold mt-1">
                   Output Format
                 </div>
               </div>

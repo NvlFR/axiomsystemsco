@@ -35,53 +35,64 @@ const NODES: WorkflowNode[] = [
 export default function WorkflowDemo() {
   const [activeNodeId, setActiveNodeId] = useState<string>("start");
   const [statuses, setStatuses] = useState<Record<string, NodeStatus>>({});
-  const [path, setPath] = useState<number>(0); // 0 = standard, 1 = fallback path
+  const [path, setPath] = useState<number>(0);
+  const [isResetting, setIsResetting] = useState(false);
 
   useEffect(() => {
     let timeouts: ReturnType<typeof setTimeout>[] = [];
 
     const runSequence = () => {
-      // Reset
-      setStatuses({});
-      setActiveNodeId("start");
-      const currentPath = Math.random() > 0.5 ? 0 : 1;
-      setPath(currentPath);
+      // Start Reset Phase
+      setIsResetting(true);
 
-      const sequence =
-        currentPath === 0
-          ? ["start", "check_stock", "decision", "process", "notify"] // Happy Path
-          : [
-              "start",
-              "check_stock",
-              "decision",
-              "supplier",
-              "process",
-              "notify",
-            ]; // Complex Path
+      // Wait for fade out, then reset state
+      timeouts.push(
+        setTimeout(() => {
+          setStatuses({});
+          setActiveNodeId("start");
+          const currentPath = Math.random() > 0.5 ? 0 : 1;
+          setPath(currentPath);
 
-      let delay = 0;
+          // Fade back in
+          setIsResetting(false);
 
-      sequence.forEach((nodeId, index) => {
-        // Activate Node
-        timeouts.push(
-          setTimeout(() => {
-            setActiveNodeId(nodeId);
-            setStatuses((prev) => ({ ...prev, [nodeId]: "active" }));
-          }, delay),
-        );
+          const sequence =
+            currentPath === 0
+              ? ["start", "check_stock", "decision", "process", "notify"] // Happy Path
+              : [
+                  "start",
+                  "check_stock",
+                  "decision",
+                  "supplier",
+                  "process",
+                  "notify",
+                ]; // Complex Path
 
-        // Complete Node
-        timeouts.push(
-          setTimeout(() => {
-            setStatuses((prev) => ({ ...prev, [nodeId]: "success" }));
-          }, delay + 800),
-        );
+          let delay = 500; // Initial delay after fade in
 
-        delay += 1000;
-      });
+          sequence.forEach((nodeId, index) => {
+            // Activate Node
+            timeouts.push(
+              setTimeout(() => {
+                setActiveNodeId(nodeId);
+                setStatuses((prev) => ({ ...prev, [nodeId]: "active" }));
+              }, delay),
+            );
 
-      // Restart Loop
-      timeouts.push(setTimeout(runSequence, delay + 2000));
+            // Complete Node
+            timeouts.push(
+              setTimeout(() => {
+                setStatuses((prev) => ({ ...prev, [nodeId]: "success" }));
+              }, delay + 800),
+            );
+
+            delay += 1000;
+          });
+
+          // Restart Loop
+          timeouts.push(setTimeout(runSequence, delay + 2000));
+        }, 500), // Wait 500ms for fade out
+      );
     };
 
     runSequence();
@@ -101,12 +112,12 @@ export default function WorkflowDemo() {
             </div>
 
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight leading-tight">
+              <h2 className="text-4xl md:text-5xl font-semibold text-white tracking-tight leading-[0.95] md:leading-tight">
                 Complex logic?
                 <br />
                 <span className="text-white/40">Handled gracefully.</span>
               </h2>
-              <p className="text-linear-text-secondary text-lg leading-relaxed max-w-md">
+              <p className="text-zinc-300 md:text-linear-text-secondary text-lg leading-relaxed max-w-md">
                 From simple sequences to multi-step branching logic with error
                 recovery. Our bots adapt to dynamic conditions in real-time.
               </p>
@@ -117,7 +128,7 @@ export default function WorkflowDemo() {
                 <div className="text-3xl font-bold text-white font-mono">
                   Infinite
                 </div>
-                <div className="text-xs uppercase tracking-wider text-white/40 font-semibold mt-1">
+                <div className="text-xs uppercase tracking-wider text-white/50 font-semibold mt-1">
                   Scalability
                 </div>
               </div>
@@ -125,7 +136,7 @@ export default function WorkflowDemo() {
                 <div className="text-3xl font-bold text-pink-400 font-mono">
                   0%
                 </div>
-                <div className="text-xs uppercase tracking-wider text-white/40 font-semibold mt-1">
+                <div className="text-xs uppercase tracking-wider text-white/50 font-semibold mt-1">
                   Downtime
                 </div>
               </div>
@@ -137,7 +148,7 @@ export default function WorkflowDemo() {
         <Reveal direction="right" delay={200}>
           <div className="relative group order-1 lg:order-2 perspective-[1000px]">
             {/* Main Container - Aspect Ratio 4/3 to match other demos */}
-            <div className="bg-[#0f1011] rounded-xl border border-white/[0.08] shadow-2xl skew-y-1 overflow-hidden aspect-[4/3] flex flex-col relative z-10 transition-transform duration-500 group-hover:rotate-x-2 group-hover:rotate-y-2 group-hover:skew-y-0">
+            <div className="bg-[#0f1011] rounded-xl border border-white/[0.08] shadow-2xl skew-y-1 overflow-hidden aspect-[4/3] flex flex-col relative z-10 transition-transform duration-500 md:group-hover:rotate-x-2 md:group-hover:rotate-y-2 group-hover:skew-y-0">
               {/* Header */}
               <div className="h-10 border-b border-white/[0.06] flex items-center px-4 justify-between bg-[#121314]">
                 <div className="flex items-center gap-2">
@@ -158,7 +169,9 @@ export default function WorkflowDemo() {
               </div>
 
               {/* Canvas */}
-              <div className="flex-1 relative bg-[#0B0C0D] p-6 overflow-hidden group-hover:bg-[#0c0d0e] transition-colors duration-500">
+              <div
+                className={`flex-1 relative bg-[#0B0C0D] p-6 overflow-hidden transition-all duration-500 ${isResetting ? "opacity-0" : "opacity-100 group-hover:bg-[#0c0d0e]"}`}
+              >
                 {/* Background Grid */}
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_70%,transparent_100%)]"></div>
 
