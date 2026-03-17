@@ -60,13 +60,13 @@ export default function WorkflowDemo() {
             currentPath === 0
               ? ["start", "check_stock", "decision", "process", "notify"] // Happy Path
               : [
-                  "start",
-                  "check_stock",
-                  "decision",
-                  "supplier",
-                  "process",
-                  "notify",
-                ]; // Complex Path
+                "start",
+                "check_stock",
+                "decision",
+                "supplier",
+                "process",
+                "notify",
+              ]; // Complex Path
 
           let delay = 500; // Initial delay after fade in
 
@@ -338,13 +338,12 @@ export default function WorkflowDemo() {
                       <div
                         className={`
                          relative px-3 py-2 rounded-lg border flex items-center justify-center gap-2 shadow-xl backdrop-blur-xl transition-all duration-300 min-w-[100px]
-                         ${
-                           isActive
-                             ? "bg-[#18181b] border-pink-500 ring-1 ring-pink-500/50"
-                             : isSuccess
-                               ? "bg-[#09090b] border-emerald-500/30 opacity-60"
-                               : "bg-[#09090b]/80 border-white/5 opacity-40 grayscale"
-                         }
+                         ${isActive
+                            ? "bg-[#18181b] border-pink-500 ring-1 ring-pink-500/50"
+                            : isSuccess
+                              ? "bg-[#09090b] border-emerald-500/30 opacity-60"
+                              : "bg-[#09090b]/80 border-white/5 opacity-40 grayscale"
+                          }
                        `}
                       >
                         {/* Icon */}

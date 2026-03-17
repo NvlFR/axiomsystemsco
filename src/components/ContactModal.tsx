@@ -28,17 +28,35 @@ export default function ContactModal() {
       window.removeEventListener("open-contact-modal", handleOpenModal);
   }, []);
 
+  // Reset semua field form ke kondisi awal
+  const resetForm = () => {
+    setName("");
+    setPhone("");
+    setService("");
+    setBudget("");
+    setRequirement("");
+  };
+
+  // Handler saat modal close — baik via tombol X maupun klik overlay
+  const handleOpenChange = (open: boolean) => {
+    setIsOpen(open);
+    if (!open) {
+      setTimeout(resetForm, 300); // Tunggu animasi close selesai
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const text = `INITIATING PARTNERSHIP REQUEST\n\n- Client Identity: ${name}\n- Contact: ${phone}\n- Service Category: ${service || "Not Specified"}\n- Estimated Budget: ${budget || "Not Specified"}\n- Mission Objective: ${requirement}\n\n[System] Awaiting Engineer Approval...`;
     const encodedText = encodeURIComponent(text);
-    const phoneNumber = "6285199256640"; // Example number
+    const phoneNumber = "6285199256640";
     window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, "_blank");
     setIsOpen(false);
+    setTimeout(resetForm, 300); // Reset setelah modal close
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+    <Dialog open={isOpen} onOpenChange={handleOpenChange}>
       <DialogContent className="sm:max-w-[600px] border border-white/[0.08] bg-[#0f1011] p-0 overflow-visible shadow-2xl">
         {/* Top Bar (Terminal Style) */}
         <div className="h-10 bg-[#18181b] border-b border-white/[0.08] flex items-center px-4 justify-between relative pl-4 pr-10 rounded-t-lg">

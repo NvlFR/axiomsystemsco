@@ -22,7 +22,7 @@ const dates = Array.from({ length: 3 }).map((_, i) => {
   d.setDate(d.getDate() + 1 + i);
   return {
     day: d.toLocaleDateString("en-US", { weekday: "short" }),
-    date: d.getDate(), // Changed to number, need to handle simple display or toString
+    date: d.getDate(),
     month: d.toLocaleDateString("en-US", { month: "short" }),
     full: d.toISOString(),
   };
@@ -51,7 +51,7 @@ export default function BookingModal() {
     const name = (form.elements.namedItem("name") as HTMLInputElement).value;
     const email = (form.elements.namedItem("email") as HTMLInputElement).value;
 
-    const message = `Hi Axiom Systems, I would like to book a Strategy Call.
+    const message = `Hi Axiom, I would like to book a Strategy Call.
     
 Requested Time: ${selectedDate}, ${selectedTime}
 Name: ${name}
@@ -60,7 +60,7 @@ Work Email: ${email}
 Please confirm availability. Thank you.`;
 
     const encodedMessage = encodeURIComponent(message);
-    const waUrl = `https://wa.me/6281234567890?text=${encodedMessage}`;
+    const waUrl = `https://wa.me/6285199256640?text=${encodedMessage}`;
 
     // Simulate delay for effect
     setTimeout(() => {
@@ -70,8 +70,21 @@ Please confirm availability. Thank you.`;
     }, 1000);
   };
 
+  // Reset semua state saat modal ditutup
+  const handleOpenChange = (open: boolean) => {
+    setIsOpen(open);
+    if (!open) {
+      setTimeout(() => {
+        setStep("date");
+        setSelectedDate(null);
+        setSelectedTime(null);
+        setLoading(false);
+      }, 300); // Tunggu animasi close selesai
+    }
+  };
+
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+    <Dialog open={isOpen} onOpenChange={handleOpenChange}>
       <DialogContent className="sm:max-w-[425px] bg-[#0f1011] border-white/[0.08] text-white p-0 gap-0 overflow-hidden">
         {step !== "success" && (
           <div className="p-6 border-b border-white/[0.08] bg-white/[0.02]">
@@ -148,7 +161,7 @@ Please confirm availability. Thank you.`;
                 onClick={() => setStep("details")}
                 className="w-full py-3 rounded-xl bg-white text-black font-bold disabled:opacity-50 disabled:cursor-not-allowed hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2"
               >
-                <span>Unknown</span>
+                <span>Next</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
@@ -228,7 +241,7 @@ Please confirm availability. Thank you.`;
                 <CheckCircle2 className="w-8 h-8 text-green-500" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-xl font-bold text-white">Redirecting...</h3>
+                <h3 className="text-xl font-bold text-white"> Redirecting to WhatsApp...</h3>
                 <p className="text-zinc-400 text-sm max-w-[250px] mx-auto">
                   Opening WhatsApp to finalize your booking with our team.
                 </p>

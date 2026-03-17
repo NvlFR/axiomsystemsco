@@ -6,6 +6,7 @@ import {
   Server,
   Code2,
   Bot,
+  Brain,
   Database,
   ArrowRight,
   X,
@@ -105,6 +106,26 @@ const services = [
       "Private Node Infrastructure",
     ],
     tech: ["Golang", "Rust", "Solidity", "Geth"],
+  },
+  {
+    title: "ClawBot AI Agent Setup",
+    description:
+      "Setup dan konfigurasi OpenClaw — AI agent personal yang bisa browsing, eksekusi perintah, dan terintegrasi langsung ke WhatsApp, Telegram, atau Slack bisnis kamu. Kita handle semua dari install sampai custom skill.",
+    icon: Brain,
+    className: "md:col-span-12",
+    gradient: "from-fuchsia-500/20 via-fuchsia-500/5 to-transparent",
+    border: "group-hover:border-fuchsia-500/50",
+    iconColor: "text-fuchsia-400",
+    pattern: "circuit",
+    features: [
+      "Setup OpenClaw di server/VPS klien",
+      "Integrasi ke WhatsApp, Telegram, Discord & Slack",
+      "Custom Skills & Plugin Development",
+      "Browser Control — browsing, form filling, data extraction",
+      "Persistent Memory & Context Management",
+      "Full System Access atau Sandboxed Mode",
+    ],
+    tech: ["OpenClaw", "Node.js", "Anthropic Claude", "OpenAI", "WhatsApp API"],
   },
   {
     title: "Automation Consulting",
@@ -213,7 +234,7 @@ export default function Services() {
                     </svg>
                   )}
                   {service.pattern === "dots" && (
-                    <div className="abolute inset-0 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                    <div className="absolute inset-0 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
                   )}
                   {service.pattern === "grid" && (
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
@@ -282,7 +303,7 @@ export default function Services() {
           ></div>
 
           {/* Modal Content */}
-          <div className="relative w-full max-w-2xl bg-[#0f1011] border border-white/[0.08] rounded-2xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300 max-h-[90vh] overflow-y-auto">
+          <div className="relative w-full max-w-2xl bg-[#0f1011] border border-white/[0.08] rounded-2xl shadow-2xl animate-in zoom-in-95 duration-300 max-h-[90vh] overflow-y-auto">
             {/* Header Gradient */}
             <div
               className={cn(

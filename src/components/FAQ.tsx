@@ -164,24 +164,27 @@ export default function FAQ() {
                     </div>
 
                     {/* Connection Lines */}
-                    <svg className="absolute inset-0 w-full h-[300px] -top-8 pointer-events-none visible overflow-visible">
+                    <svg className="absolute inset-0 w-full h-[300px] -top-8 pointer-events-none visible overflow-visible" viewBox="0 0 300 200" preserveAspectRatio="none">
                       <path
-                        d="M 50% 10 L 15% 100"
+                        d="M 150 10 L 40 120"
                         stroke="#333"
                         strokeDasharray="4 4"
                         className="animate-pulse"
+                        fill="none"
                       />
                       <path
-                        d="M 50% 10 L 50% 100"
+                        d="M 150 10 L 150 120"
                         stroke="#333"
                         strokeDasharray="4 4"
                         className="animate-pulse"
+                        fill="none"
                       />
                       <path
-                        d="M 50% 10 L 85% 100"
+                        d="M 150 10 L 260 120"
                         stroke="#333"
                         strokeDasharray="4 4"
                         className="animate-pulse"
+                        fill="none"
                       />
                     </svg>
 

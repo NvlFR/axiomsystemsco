@@ -89,7 +89,7 @@ export default function Navbar() {
                 <line x1="8" x2="8" y1="2" y2="6" />
                 <line x1="3" x2="21" y1="10" y2="10" />
               </svg>
-              Book Strategy Call
+              Start a Consultation
             </button>
 
             {/* Mobile Hamburger (Library) */}
@@ -153,7 +153,7 @@ export default function Navbar() {
                 }}
                 className="w-full max-w-xs h-[52px] bg-white text-black font-bold rounded-xl text-lg hover:bg-zinc-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.1)]"
               >
-                Book Strategy Call
+                Start a Consultation
               </motion.button>
             </div>
           </motion.div>

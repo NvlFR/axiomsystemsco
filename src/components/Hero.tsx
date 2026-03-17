@@ -104,7 +104,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-[120vh] flex flex-col justify-start text-left overflow-hidden pt-32 md:pt-48 pb-40"
+      className="relative flex flex-col justify-start text-left overflow-hidden pt-32 md:pt-44 pb-24 md:pb-40"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       ref={containerRef}
@@ -120,7 +120,7 @@ export default function Hero() {
               </span>
             </span>
             <span className="w-[1px] h-3 bg-white/10 mx-1"></span>
-            <span>Q1 2026 Slots Available</span>
+            <span>Q2 2026 Slot Available</span>
             <ChevronRight className="w-3 h-3 ml-1 text-white/50 group-hover:translate-x-0.5 transition-transform" />
           </div>
         </div>
@@ -129,16 +129,15 @@ export default function Hero() {
         <h1 className="animate-fade-in-up [animation-delay:200ms] text-[48px] md:text-[80px] lg:text-[88px] font-semibold tracking-tighter leading-[0.95] md:leading-[0.9] text-white">
           The End of{" "}
           <span className="text-white/70 md:text-white/50 whitespace-nowrap">
-            Manual Work.
+            Manual Work
           </span>
-          <div className="mt-4 md:mt-2 w-full text-2xl md:text-5xl font-normal text-linear-text-secondary tracking-tight">
+          <div className="mt-4 md:mt-2 text-3xl md:text-5xl lg:text-6xl font-normal text-linear-text-secondary tracking-tight">
             <span>It's time to automate your </span>
             <span
-              className={`bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400 font-semibold inline-block transition-all duration-500 ease-in-out ${
-                fade
-                  ? "opacity-100 transform translate-y-0 filter blur-0"
-                  : "opacity-0 transform translate-y-4 filter blur-sm"
-              }`}
+              className={`bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400 font-semibold inline-block transition-all duration-500 ease-in-out ${fade
+                ? "opacity-100 transform translate-y-0 filter blur-0"
+                : "opacity-0 transform translate-y-4 filter blur-sm"
+                }`}
             >
               {WORDS[textIndex]}.
             </span>
@@ -148,8 +147,8 @@ export default function Hero() {
         {/* Subheadline */}
         <p className="animate-fade-in-up [animation-delay:400ms] text-[19px] md:text-[21px] text-zinc-300 md:text-linear-text-secondary max-w-2xl mr-auto leading-relaxed font-normal tracking-wide pt-2 [text-wrap:balance]">
           The era of manual work is over. AxiomSystemsCo builds the{" "}
-          <span className="text-white">infrastructure</span> you need to scale
-          without adding headcount.
+          <span className="text-white">infrastructure</span> you need to scale{" "}
+          <span className="text-white">without adding headcount.</span>
         </p>
 
         {/* CTA Buttons */}
@@ -179,15 +178,12 @@ export default function Hero() {
       {/* Split Layout: Terminal (Left) & Explanation (Right) */}
       {/* 3D Parallax Glass Window */}
       {/* Split Layout: Terminal (Left) & Explanation (Right) */}
-      <div className="relative mt-24 md:mt-64 w-full max-w-6xl mx-auto px-6">
+      <div className="relative mt-16 md:mt-24 w-full max-w-6xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left: Terminal Window (Smaller, No Sidebar) */}
           <Reveal direction="left">
             <div
               className="relative perspective-[2000px] group"
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
-              ref={containerRef}
             >
               <div
                 className="relative rounded-[12px] border border-white/[0.08] bg-[#0f1011] shadow-2xl overflow-hidden aspect-[4/3] transition-transform duration-100 ease-out"

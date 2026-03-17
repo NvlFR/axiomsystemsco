@@ -56,34 +56,22 @@ export default function Footer() {
               <h4 className="text-[14px] font-medium text-white">Solutions</h4>
               <ul className="space-y-3 text-[14px] text-linear-text-secondary">
                 <li>
-                  <a
-                    href="#services"
-                    className="hover:text-white transition-colors block"
-                  >
+                  <a href="#services" className="hover:text-white transition-colors block">
                     Custom Bots
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#services"
-                    className="hover:text-white transition-colors block"
-                  >
+                  <a href="#services" className="hover:text-white transition-colors block">
                     Consulting
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#services"
-                    className="hover:text-white transition-colors block"
-                  >
+                  <a href="#services" className="hover:text-white transition-colors block">
                     Data Extraction
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#cases"
-                    className="hover:text-white transition-colors block"
-                  >
+                  <a href="#services" className="hover:text-white transition-colors block">
                     Case Studies
                   </a>
                 </li>
@@ -96,38 +84,10 @@ export default function Footer() {
             <Reveal delay={200}>
               <h4 className="text-[14px] font-medium text-white">Company</h4>
               <ul className="space-y-3 text-[14px] text-linear-text-secondary">
-                <li>
-                  <a
-                    href="#about"
-                    className="hover:text-white transition-colors block"
-                  >
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors block"
-                  >
-                    Process
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors block"
-                  >
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors block"
-                  >
-                    Contact
-                  </a>
-                </li>
+                <li><a href="#contact" className="hover:text-white transition-colors block">About</a></li>
+                <li><a href="#process" className="hover:text-white transition-colors block">Process </a></li>
+                <li><a href="#" className="hover:text-white transition-colors block">Careers</a></li>
+                <li><a href="#contact" className="hover:text-white transition-colors block">Contact</a></li>
               </ul>
             </Reveal>
           </div>
@@ -137,30 +97,9 @@ export default function Footer() {
             <Reveal delay={300}>
               <h4 className="text-[14px] font-medium text-white">Legal</h4>
               <ul className="space-y-3 text-[14px] text-linear-text-secondary">
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors block"
-                  >
-                    Privacy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors block"
-                  >
-                    Terms
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors block"
-                  >
-                    Security
-                  </a>
-                </li>
+                <li><a href="#" className="hover:text-white transition-colors block">Privacy</a></li>
+                <li><a href="#" className="hover:text-white transition-colors block">Terms</a></li>
+                <li><a href="#" className="hover:text-white transition-colors block">Security</a></li>
               </ul>
             </Reveal>
           </div>
