@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 const botTypes = [
   { id: "sniper", name: "Ticket / Queue Sniper", icon: "⚡", desc: "Automasi checkout & antrean cepat" },
   { id: "scraper", name: "Web Scraper & Monitor", icon: "🔍", desc: "Ekstraksi & pantau data real-time" },
-  { id: "clawbot", name: "ClawBot AI Agent", icon: "🤖", desc: "Setup OpenClaw — AI agent di WhatsApp/Telegram/Slack" },
+  { id: "clawbot", name: "OpenClaw AI Agent Setup", icon: "🤖", desc: "Setup OpenClaw — AI agent di WhatsApp/Telegram/Slack" },
   { id: "whatsapp", name: "WhatsApp Automation", icon: "💬", desc: "Bot WA custom untuk bisnis" },
   { id: "automation", name: "Task & Workflow Bot", icon: "⚙️", desc: "Otomasi proses bisnis internal" },
   { id: "integration", name: "System Integration", icon: "🔗", desc: "Hubungkan sistem & API eksternal" },

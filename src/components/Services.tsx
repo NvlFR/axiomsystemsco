@@ -34,6 +34,7 @@ const services = [
       "Multi-threaded Tasks",
     ],
     tech: ["Go", "Redis", "Docker"],
+    image: "/services/ticket.jpg",
   },
   {
     title: "Auction & Bidding Bots",
@@ -51,6 +52,7 @@ const services = [
       "Anti-Detection Measures",
     ],
     tech: ["Node.js", "WebSockets"],
+    image: "/services/auction.jpg",
   },
   {
     title: "Queue Bypass Systems",
@@ -68,6 +70,7 @@ const services = [
       "Cloudflare Turnstile Bypass",
     ],
     tech: ["Node.js", "Puppeteer"],
+    image: "/services/queue.jpg",
   },
   {
     title: "Enterprise Scraping",
@@ -85,6 +88,7 @@ const services = [
       "Daily/Hourly Scheduling",
     ],
     tech: ["Playwright", "PostgreSQL"],
+    image: "/services/scraping.jpg",
   },
   {
     title: "Crypto & DeFi Automation",
@@ -102,6 +106,7 @@ const services = [
       "Smart Contract Interaction",
     ],
     tech: ["Go", "Rust", "Solidity"],
+    image: "/services/crypto.jpg",
   },
   {
     title: "Automation Consulting",
@@ -119,9 +124,10 @@ const services = [
       "Performance Optimization",
     ],
     tech: ["TypeScript", "Kubernetes"],
+    image: "/services/consulting.jpg",
   },
   {
-    title: "ClawBot AI Agent Setup",
+    title: "OpenClaw AI Agent Setup",
     description:
       "Setup dan konfigurasi OpenClaw — AI agent personal yang bisa browsing, eksekusi perintah, dan terintegrasi langsung ke WhatsApp atau Slack bisnis kamu.",
     icon: Brain,
@@ -138,6 +144,7 @@ const services = [
       "Persistent Memory & Context Management",
     ],
     tech: ["OpenClaw", "WhatsApp API"],
+    image: "/services/openclaw.png",
   },
 ];
 
@@ -188,7 +195,8 @@ export default function Services() {
               <div
                 onClick={() => setSelectedService(service)}
                 className={cn(
-                  "group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0f1011] transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 cursor-pointer min-h-[320px] flex flex-col justify-between",
+                  "group relative overflow-hidden rounded-3xl border border-white/[0.08] bg-[#0f1011] transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 cursor-pointer flex flex-col",
+                  service.className.includes("col-span-12") ? "min-h-[450px] md:min-h-[500px]" : "min-h-[320px]",
                   service.border,
                 )}
               >
@@ -249,33 +257,58 @@ export default function Services() {
                   )}
                 </div>
 
-                {/* Content */}
-                <div className="relative z-10 p-8 flex flex-col justify-between h-full">
-                  <div className="space-y-6">
-                    {/* Icon */}
+                {/* Background Image Overlay */}
+                <div className="absolute inset-0 z-0">
+                  <img 
+                    src={service.image} 
+                    alt="" 
+                    className="w-full h-full object-cover opacity-[0.05] group-hover:opacity-[0.15] transition-opacity duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f1011] via-[#0f1011]/80 to-transparent"></div>
+                </div>
+
+                {/* Content Container */}
+                <div className="relative z-10 flex flex-col h-full">
+                  {/* Top Image Section */}
+                  <div className={cn(
+                    "relative overflow-hidden flex-shrink-0 transition-all duration-500",
+                    service.className.includes("col-span-12") ? "h-64 md:h-80" : "h-40 md:h-48"
+                  )}>
+                    <img 
+                      src={service.image} 
+                      alt="" 
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1011] via-[#0f1011]/40 to-transparent"></div>
+                    <div className={cn("absolute inset-0 bg-gradient-to-br opacity-40 mix-blend-overlay", service.gradient)}></div>
+                    
+                    {/* Floating Icon */}
                     <div
                       className={cn(
-                        "w-12 h-12 rounded-xl bg-white/[0.03] border border-white/[0.08] flex items-center justify-center transition-colors duration-500 group-hover:bg-white/[0.08]",
+                        "absolute top-4 left-4 w-12 h-12 rounded-xl bg-black/60 backdrop-blur-md flex items-center justify-center transition-all duration-500 border border-white/10 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]",
                         service.iconColor,
                       )}
                     >
                       <service.icon className="w-6 h-6" />
                     </div>
-
-                    {/* Title */}
-                    <h3 className="text-2xl font-semibold text-white tracking-tight group-hover:text-white transition-colors">
-                      {service.title}
-                    </h3>
                   </div>
 
-                  {/* Description */}
-                  <div className="mt-8 space-y-4">
-                    <p className="text-zinc-400 text-sm leading-relaxed max-w-sm group-hover:text-zinc-300 transition-colors">
-                      {service.description}
-                    </p>
+                  {/* Body Content */}
+                  <div className="p-8 flex flex-col justify-between flex-grow">
+                    <div className="space-y-4">
+                      {/* Title */}
+                      <h3 className="text-2xl font-semibold text-white tracking-tight group-hover:text-white transition-colors">
+                        {service.title}
+                      </h3>
+                      
+                      {/* Description */}
+                      <p className="text-zinc-400 text-sm leading-relaxed max-w-sm group-hover:text-zinc-300 transition-colors">
+                        {service.description}
+                      </p>
+                    </div>
 
-                    {/* Learn More Link */}
-                    <div className="flex items-center gap-2 text-xs font-medium text-white/40 group-hover:text-white transition-colors uppercase tracking-wider">
+                    {/* Learn More Link (Now at the bottom) */}
+                    <div className="mt-8 flex items-center gap-2 text-xs font-medium text-white/40 group-hover:text-white transition-colors uppercase tracking-wider">
                       <span>Explore Solution</span>
                       <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
                     </div>
@@ -320,6 +353,16 @@ export default function Services() {
                 </button>
 
                 <div className="p-8 md:p-10 space-y-8">
+                  {/* Preview Image in Modal */}
+                  <div className="relative h-44 md:h-64 rounded-xl overflow-hidden border border-white/10 bg-black/20">
+                    <img 
+                      src={selectedService.image} 
+                      alt={selectedService.title}
+                      className="w-full h-full object-cover transition-all"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1011] to-transparent opacity-60"></div>
+                  </div>
+
                   {/* Header */}
                   <div className="space-y-4">
                     <div

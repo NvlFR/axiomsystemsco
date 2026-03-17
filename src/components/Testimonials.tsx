@@ -96,11 +96,15 @@ export default function Testimonials() {
                   )}
                 </div>
 
-                <div className="space-y-4 mb-8 flex-1">
-                  <p className="text-zinc-300 text-lg leading-relaxed italic">
-                    "{t.content}"
-                  </p>
+                <div className="flex-1 flex flex-col mb-8">
+                  {/* Quote Container - will grow to fill space */}
+                  <div className="flex-1 mb-6">
+                    <p className="text-zinc-300 text-lg leading-relaxed italic">
+                      "{t.content}"
+                    </p>
+                  </div>
 
+                  {/* Before/After Box - now pushed to the bottom of the content area */}
                   <div className="grid grid-cols-2 gap-3 p-4 rounded-2xl bg-white/[0.03] border border-white/5">
                     <div className="space-y-1">
                       <div className="text-[10px] uppercase text-zinc-500 font-bold tracking-tight">BEFORE</div>

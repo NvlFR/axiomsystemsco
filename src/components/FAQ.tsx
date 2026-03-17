@@ -438,6 +438,76 @@ export default function FAQ() {
                     </div>
                   </div>
                 )}
+
+                {/* VISUAL: Legal/Compliance (New) */}
+                {activeTab === 7 && (
+                  <div className="text-center space-y-6 animate-in fade-in zoom-in-95 duration-500">
+                    <div className="relative inline-flex">
+                      <div className="absolute inset-0 bg-blue-500/20 blur-xl rounded-full animate-pulse"></div>
+                      <div className="relative w-24 h-24 rounded-full bg-[#18181b] border border-blue-500/30 flex items-center justify-center">
+                        <Shield className="w-10 h-10 text-blue-500" />
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-medium text-white">Safe & Compliant</h4>
+                      <p className="text-sm text-zinc-500 mt-2 leading-relaxed">
+                        Kami mengutamakan metode non-agresif agar sitem
+                        <br />tetap aman dan mematuhi etika web data.
+                      </p>
+                    </div>
+                    <div className="flex justify-center gap-3">
+                      <div className="px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/[0.08] text-[10px] font-mono text-emerald-400 flex items-center gap-2">
+                        <CheckCircle2 className="w-3 h-3" /> Ethics First
+                      </div>
+                      <div className="px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/[0.08] text-[10px] font-mono text-blue-400 flex items-center gap-2">
+                        <Lock className="w-3 h-3" /> Account Safe
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* VISUAL: Maintenance (Indo version) */}
+                {activeTab === 8 && (
+                  <div className="w-full max-w-sm animate-in fade-in duration-500 space-y-6">
+                    <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.08] space-y-4 shadow-2xl">
+                       <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                             <span className="text-xs font-mono text-zinc-400 uppercase tracking-widest">Active Monitoring</span>
+                          </div>
+                          <span className="text-[10px] font-mono text-zinc-600">v4.2.0</span>
+                       </div>
+                       
+                       <div className="space-y-3">
+                          <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                             <div className="h-full bg-emerald-500/40 w-full rounded-full"></div>
+                          </div>
+                          <div className="flex justify-between text-[10px] font-mono text-zinc-500 uppercase">
+                             <span>Target: System Nodes</span>
+                             <span className="text-emerald-500">Stable</span>
+                          </div>
+                       </div>
+
+                       <div className="pt-4 flex items-center gap-3">
+                          <div className="flex-1 p-3 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                             <div className="text-xl font-bold text-white font-mono leading-none mb-1">99.9%</div>
+                             <div className="text-[9px] text-zinc-500 uppercase tracking-tighter">Uptime</div>
+                          </div>
+                          <div className="flex-1 p-3 rounded-xl bg-white/[0.03] border border-white/5 text-center">
+                             <div className="text-xl font-bold text-white font-mono leading-none mb-1">&lt;1h</div>
+                             <div className="text-[9px] text-zinc-500 uppercase tracking-tighter">Fix Time</div>
+                          </div>
+                       </div>
+                    </div>
+                    
+                    <div className="text-center">
+                       <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/5 border border-emerald-500/10 text-emerald-400 text-[11px] font-medium">
+                          <RefreshCw className="w-3.5 h-3.5 animate-spin" />
+                          24/7 Managed Maintenance
+                       </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

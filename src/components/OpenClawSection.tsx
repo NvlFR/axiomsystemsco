@@ -3,16 +3,16 @@ import { Brain, Zap, Cpu, MessageSquare, Globe, Shield, ArrowRight, ExternalLink
 import Reveal from "@/components/Reveal";
 import { cn } from "@/lib/utils";
 
-// Detail dua varian ClawBot yang di-support
+// Detail dua varian OpenClaw yang di-support
 const variants = [
   {
-    id: "openclaw",
+    id: "pro",
     badge: "Full Power",
     badgeColor: "text-fuchsia-400 bg-fuchsia-500/10 border-fuchsia-500/30",
-    name: "OpenClaw",
+    name: "OpenClaw Pro",
     tagline: "AI yang benar-benar bekerja.",
     description:
-      "AI agent personal yang bisa benar-benar bekerja — browsing web, isi form, eksekusi script, dan hadir langsung di WhatsApp, Telegram, atau Slack bisnis kamu.",
+      "Seri Pro dari OpenClaw — AI agent personal yang bisa benar-benar bekerja — browsing web, isi form, eksekusi script, dan hadir langsung di WhatsApp, Telegram, atau Slack bisnis kamu.",
     url: "https://openclaw.ai",
     accentColor: "fuchsia",
     glowColor: "rgba(217, 70, 239, 0.15)",
@@ -25,6 +25,7 @@ const variants = [
       { icon: Sparkles, label: "Kustom Skill", desc: "Build plugin sendiri atau pakai community skills" },
       { icon: Shield, label: "Privacy-First", desc: "Data tetap di local machine klien — tidak dikirim ke cloud" },
     ],
+    image: "/services/openclaw.png",
   },
   {
     id: "picoclaw",
@@ -33,7 +34,7 @@ const variants = [
     name: "PicoClaw",
     tagline: "AI ultra-efisien. $10 hardware. 10MB RAM.",
     description:
-      "Varian ultra-ringan dari ClawBot — didesain untuk jalan di hardware murah (Raspberry Pi, microcontroller RISC-V). Boot dalam 1 detik, footprint 99% lebih kecil.",
+      "Varian ultra-ringan dari OpenClaw — didesain untuk jalan di hardware murah (Raspberry Pi, microcontroller RISC-V). Boot dalam 1 detik, footprint 99% lebih kecil.",
     url: "https://picoclaw.io",
     accentColor: "cyan",
     glowColor: "rgba(6, 182, 212, 0.15)",
@@ -46,20 +47,21 @@ const variants = [
       { icon: Shield, label: "Biaya Ultra Rendah", desc: "Cukup hardware $10 — 98% lebih murah dari Mac mini" },
       { icon: Brain, label: "AI-Bootstrapped", desc: "Core dibangun 95% oleh AI agent dengan human review" },
     ],
+    image: "/services/picoclaw.jpg",
   },
 ];
 
 // Langkah setup yang Axiom handle
 const setupSteps = [
-  { step: "01", title: "Konsultasi & Pilih Varian", desc: "Kita tentuin OpenClaw atau PicoClaw sesuai kebutuhan dan budget klien." },
+  { step: "01", title: "Konsultasi & Pilih Varian", desc: "Kita tentuin OpenClaw Pro atau PicoClaw sesuai kebutuhan dan budget klien." },
   { step: "02", title: "Provisioning Server/Hardware", desc: "Setup VPS atau hardware edge — semua kita handle dari awal." },
-  { step: "03", title: "Instalasi & Konfigurasi", desc: "Install ClawBot, connect ke platform chat, dan konfigurasi semua setting." },
+  { step: "03", title: "Instalasi & Konfigurasi", desc: "Install OpenClaw, connect ke platform chat, dan konfigurasi semua setting." },
   { step: "04", title: "Custom Skills Development", desc: "Build skill & plugin custom sesuai workflow bisnis klien." },
   { step: "05", title: "Testing & Handover", desc: "Uji coba menyeluruh, training penggunaan, dan serahkan ke klien." },
 ];
 
-export default function ClawBotSection() {
-  const [activeVariant, setActiveVariant] = useState<"openclaw" | "picoclaw">("openclaw");
+export default function OpenClawSection() {
+  const [activeVariant, setActiveVariant] = useState<string>("pro");
   const current = variants.find((v) => v.id === activeVariant)!;
 
   const handleGetSetup = () => {
@@ -90,7 +92,7 @@ export default function ClawBotSection() {
               Sedang Tren — Setup AI Agent
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-white leading-[1.1]">
-              ClawBot:{" "}
+              OpenClaw:{" "}
               <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-200 bg-clip-text text-transparent">
                 The Agent of Work
               </span>
@@ -109,7 +111,7 @@ export default function ClawBotSection() {
               {variants.map((v) => (
                 <button
                   key={v.id}
-                  onClick={() => setActiveVariant(v.id as "openclaw" | "picoclaw")}
+                  onClick={() => setActiveVariant(v.id)}
                   className={cn(
                     "relative px-6 md:px-8 py-3 rounded-xl text-base font-black transition-all duration-300 flex flex-col items-center justify-center gap-1 min-w-[120px] md:min-w-[160px]",
                     activeVariant === v.id
@@ -120,7 +122,7 @@ export default function ClawBotSection() {
                   {activeVariant === v.id && (
                     <div className={cn(
                       "absolute inset-0 rounded-xl opacity-30",
-                      v.id === "openclaw" ? "bg-fuchsia-500/30" : "bg-cyan-500/30"
+                      v.id === "pro" ? "bg-fuchsia-500/30" : "bg-cyan-500/30"
                     )} />
                   )}
                   <span className={cn(
@@ -143,7 +145,7 @@ export default function ClawBotSection() {
             {/* Top gradient bar */}
             <div className={cn(
               "h-px w-full",
-              current.id === "openclaw"
+              current.id === "pro"
                 ? "bg-gradient-to-r from-transparent via-fuchsia-500/60 to-transparent"
                 : "bg-gradient-to-r from-transparent via-cyan-500/60 to-transparent"
             )} />
@@ -152,7 +154,7 @@ export default function ClawBotSection() {
               {/* Left — Visual Mockup + Setup Steps */}
               <div className={cn(
                 "p-6 sm:p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-white/[0.08] flex flex-col gap-6 sm:gap-8",
-                current.id === "openclaw"
+                current.id === "pro"
                   ? "bg-gradient-to-br from-fuchsia-900/10 to-transparent"
                   : "bg-gradient-to-br from-cyan-900/10 to-transparent"
               )}>
@@ -162,12 +164,12 @@ export default function ClawBotSection() {
                    <div className="h-12 sm:h-14 bg-white/[0.03] border-b border-white/[0.08] px-4 flex items-center gap-3 flex-shrink-0 backdrop-blur-md">
                       <div className={cn(
                         "w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center border",
-                        current.id === "openclaw" ? "bg-fuchsia-500/10 border-fuchsia-500/30" : "bg-cyan-500/10 border-cyan-500/30"
+                        current.id === "pro" ? "bg-fuchsia-500/10 border-fuchsia-500/30" : "bg-cyan-500/10 border-cyan-500/30"
                       )}>
-                         <Brain className={cn("w-3.5 h-3.5 sm:w-4 sm:h-4", current.id === "openclaw" ? "text-fuchsia-400" : "text-cyan-400")} />
+                         <Brain className={cn("w-3.5 h-3.5 sm:w-4 sm:h-4", current.id === "pro" ? "text-fuchsia-400" : "text-cyan-400")} />
                       </div>
                       <div>
-                        <div className="text-[11px] sm:text-xs font-semibold text-white">ClawBot Agent</div>
+                        <div className="text-[11px] sm:text-xs font-semibold text-white">OpenClaw Agent</div>
                         <div className="text-[9px] sm:text-[10px] text-zinc-500 flex items-center gap-1">
                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                            Online & Ready
@@ -177,7 +179,17 @@ export default function ClawBotSection() {
                    
                    {/* Chat Timeline */}
                    <div className="p-3 sm:p-5 flex-1 flex flex-col gap-3 sm:gap-4 overflow-hidden relative">
-                      {/* Background watermark */}
+                      <div className="absolute inset-0 opacity-[0.08] pointer-events-none bg-black/20">
+                        <img 
+                          key={current.id}
+                          src={current.image} 
+                          alt="" 
+                          className={cn(
+                            "w-full h-full object-contain animate-in fade-in duration-700",
+                            current.id === "picoclaw" && "object-cover opacity-100" // PicoClaw is a photo, cover is better
+                          )}
+                        />
+                      </div>
                       <div className="absolute inset-0 opacity-[0.02] flex items-center justify-center pointer-events-none">
                         <MessageSquare className="w-32 h-32 sm:w-48 sm:h-48" />
                       </div>
@@ -198,7 +210,7 @@ export default function ClawBotSection() {
                             <div className="bg-black/50 rounded-lg p-2.5 sm:p-3 font-mono text-[9px] sm:text-[10px] space-y-1.5 sm:space-y-2 border border-white/[0.05]">
                                <div className="flex items-center justify-between text-zinc-500 border-b border-white/[0.05] pb-1.5 sm:pb-2 mb-1">
                                   <span>PROCESS LOG</span>
-                                  <span className={current.id === "openclaw" ? "text-fuchsia-500" : "text-cyan-500"}>Running</span>
+                                  <span className={current.id === "pro" ? "text-fuchsia-500" : "text-cyan-500"}>Running</span>
                                </div>
                                <div className="flex items-center gap-1.5 sm:gap-2 text-zinc-400 whitespace-nowrap overflow-hidden text-ellipsis">
                                   <span className="text-emerald-500 shrink-0">✓</span> Mengakses portal...
@@ -228,7 +240,7 @@ export default function ClawBotSection() {
                 <div className="space-y-3 sm:space-y-4">
                   <p className={cn(
                     "text-[10px] sm:text-xs font-mono uppercase tracking-widest font-black mb-1",
-                    current.id === "openclaw" ? "text-fuchsia-400" : "text-cyan-400"
+                    current.id === "pro" ? "text-fuchsia-400" : "text-cyan-400"
                   )}>
                     Axiom Implementation Workflow
                   </p>
@@ -238,7 +250,7 @@ export default function ClawBotSection() {
                         <div className="flex items-center gap-2">
                            <span className={cn(
                               "text-[9px] sm:text-[10px] font-mono font-black px-1.5 py-0.5 rounded bg-white/5 border border-white/10 shrink-0",
-                              current.id === "openclaw" ? "text-fuchsia-500" : "text-cyan-500"
+                              current.id === "pro" ? "text-fuchsia-500" : "text-cyan-500"
                            )}>
                               {step}
                            </span>
@@ -263,7 +275,7 @@ export default function ClawBotSection() {
                     <h3 className="text-4xl font-black text-white tracking-tight">{current.name}</h3>
                     <p className={cn(
                       "text-lg font-mono",
-                      current.id === "openclaw" ? "text-fuchsia-300" : "text-cyan-300"
+                      current.id === "pro" ? "text-fuchsia-300" : "text-cyan-300"
                     )}>
                       {current.tagline}
                     </p>
@@ -276,11 +288,11 @@ export default function ClawBotSection() {
                       <div key={i} className="flex items-start gap-4 p-4 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] transition-colors group/feat">
                         <div className={cn(
                           "w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0",
-                          current.id === "openclaw"
+                          current.id === "pro"
                             ? "bg-fuchsia-500/10 border border-fuchsia-500/20"
                             : "bg-cyan-500/10 border border-cyan-500/20"
                         )}>
-                          <Icon className={cn("w-5 h-5", current.id === "openclaw" ? "text-fuchsia-400" : "text-cyan-400")} />
+                          <Icon className={cn("w-5 h-5", current.id === "pro" ? "text-fuchsia-400" : "text-cyan-400")} />
                         </div>
                         <div>
                           <div className="text-sm font-black text-white leading-tight uppercase tracking-tight">{label}</div>
@@ -307,7 +319,7 @@ export default function ClawBotSection() {
                     onClick={handleGetSetup}
                     className={cn(
                       "w-full py-5 rounded-2xl font-black text-base flex items-center justify-center gap-3 group transition-all duration-300 transform hover:scale-[1.02]",
-                      current.id === "openclaw"
+                      current.id === "pro"
                         ? "bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-500 hover:to-pink-500 text-white shadow-[0_20px_40px_rgba(217,70,239,0.3)]"
                         : "bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white shadow-[0_20px_40px_rgba(6,182,212,0.3)]"
                     )}
@@ -325,7 +337,7 @@ export default function ClawBotSection() {
         <Reveal delay={200}>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
             {[
-              { label: "OpenClaw", value: "Fitur Lengkap", sub: "Server / Desktop", color: "text-fuchsia-400" },
+              { label: "OpenClaw Pro", value: "Fitur Lengkap", sub: "Server / Desktop", color: "text-fuchsia-400" },
               { label: "vs", value: "Pilih Sesuai", sub: "Kebutuhan Klien", color: "text-zinc-500" },
               { label: "PicoClaw", value: "Ultra-Ringan", sub: "Edge / IoT Hardware", color: "text-cyan-400" },
             ].map(({ label, value, sub, color }, i) => (
