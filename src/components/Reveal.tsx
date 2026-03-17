@@ -43,15 +43,18 @@ export default function Reveal({
   }, [threshold]);
 
   const getTransform = () => {
+    // Check for mobile (simple check)
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    
     switch (direction) {
       case "up":
         return "translate-y-8";
       case "down":
         return "-translate-y-8";
       case "left":
-        return "-translate-x-8";
+        return isMobile ? "-translate-x-4" : "-translate-x-8";
       case "right":
-        return "translate-x-8";
+        return isMobile ? "translate-x-4" : "translate-x-8";
       default:
         return "translate-y-8";
     }

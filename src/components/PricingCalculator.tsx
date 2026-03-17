@@ -71,12 +71,16 @@ export default function PricingCalculator() {
       className="py-24 px-6 relative border-t border-white/[0.08] bg-[#08090a] overflow-hidden"
     >
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] max-w-[100vw] bg-indigo-500/5 blur-[120px] rounded-full -z-10 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] max-w-full bg-indigo-500/5 blur-[120px] rounded-full -z-10 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <Reveal>
           <div className="text-center space-y-4 max-w-2xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-mono font-bold uppercase tracking-widest mb-4">
+              <Zap className="w-3.5 h-3.5" />
+              <span>Investment starts from Rp 3.000.000</span>
+            </div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-zinc-400 text-xs font-mono mb-4">
               <MessageSquare className="w-3.5 h-3.5" />
               <span>Project Scoping</span>

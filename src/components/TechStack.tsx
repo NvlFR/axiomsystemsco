@@ -104,7 +104,7 @@ export default function TechStack() {
           </div>
 
           {/* Desktop: Horizontal Marquee */}
-          <div className="hidden md:flex w-full overflow-hidden mask-linear-fade">
+          <div className="hidden md:flex w-full overflow-hidden max-w-full mask-linear-fade">
             <div className="flex w-full">
               <div
                 className="flex min-w-full shrink-0 animate-marquee items-center justify-around gap-12 sm:gap-24"

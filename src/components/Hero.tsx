@@ -64,6 +64,8 @@ export default function Hero() {
   const [logs, setLogs] = useState<string[]>([
     "> Initializing Axiom Core v4.2...",
     "> Establishing proxy tunnel (Residential-UK)...",
+    "> Bypassing security headers...",
+    "> Connection encrypted...",
   ]);
 
   useEffect(() => {
@@ -87,7 +89,7 @@ export default function Hero() {
       ]);
       sequence.forEach(({ text, delay }) => {
         const timeout = setTimeout(() => {
-          setLogs((prev) => [...prev.slice(-4), text]);
+          setLogs((prev) => [...prev.slice(-5), text]);
         }, delay);
         timeouts.push(timeout);
       });
@@ -133,7 +135,7 @@ export default function Hero() {
               The End of{" "}
               <span className="relative inline-block mt-1 md:mt-0">
                 <span className="text-white block md:inline drop-shadow-[0_0_50px_rgba(255,255,255,0.4)]">Manual Work</span>
-                <span className="absolute -top-4 -right-2 md:-top-3 md:-right-1 text-[7px] font-mono text-emerald-400 bg-emerald-500/15 px-1 py-0.5 rounded border border-emerald-500/30 rotate-6 select-none pointer-events-none tracking-widest whitespace-nowrap shadow-[0_0_20px_rgba(16,185,129,0.2)] backdrop-blur-md">
+                <span className="absolute -top-6 -right-4 md:-top-5 md:-right-3 text-[7px] font-mono text-emerald-400 bg-emerald-500/15 px-1.5 py-0.5 rounded border border-emerald-500/30 rotate-6 select-none pointer-events-none tracking-widest whitespace-nowrap shadow-[0_0_20px_rgba(16,185,129,0.2)] backdrop-blur-md z-20">
                    END_OF_ERA
                 </span>
               </span>
@@ -155,6 +157,9 @@ export default function Hero() {
               The era of manual work is over. Axiom systems build the{" "}
               <span className="text-white font-semibold">high-performance infrastructure</span> you need to scale{" "}
               <span className="text-white font-semibold italic underline decoration-emerald-500/40 underline-offset-4">without adding headcount.</span>
+              <span className="block mt-5 text-emerald-400 font-mono text-[10px] md:text-xs tracking-widest font-bold antialiased leading-none">
+                ✓ KLIEN KAMI MENGHEMAT RATA-RATA 40 JAM KERJA PER MINGGU.
+              </span>
             </p>
 
             {/* CTA Buttons (Enhanced) */}
@@ -176,9 +181,12 @@ export default function Hero() {
               <a href="#services" className="w-full sm:w-auto">
                 <Button
                   variant="ghost"
-                  className="h-[50px] md:h-[60px] w-full sm:w-auto px-8 rounded-[20px] bg-transparent text-zinc-400 hover:text-white hover:bg-white/5 text-sm md:text-base font-medium transition-all group"
+                  className="h-[50px] md:h-[60px] w-full sm:w-auto px-8 rounded-[20px] bg-white/[0.02] border border-white/[0.05] text-zinc-500 hover:text-white hover:bg-white/5 text-sm md:text-base font-medium transition-all group"
                 >
-                  <span className="border-b border-transparent group-hover:border-white/40 pb-0.5 transition-colors">Explore Capabilities</span>
+                  <span className="group-hover:translate-x-0.5 transition-transform flex items-center gap-2">
+                    Explore Capabilities
+                    <ChevronRight className="w-4 h-4 opacity-30 group-hover:opacity-100" />
+                  </span>
                 </Button>
               </a>
             </div>
@@ -281,8 +289,8 @@ export default function Hero() {
 
       {/* 3D Parallax Glass Window */}
       {/* Split Layout: Terminal (Left) & Explanation (Right) */}
-      <div className="relative mt-2 md:mt-12 lg:mt-16 w-full max-w-6xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-16 items-center">
+      <div className="relative mt-2 md:mt-8 lg:mt-12 w-full max-w-6xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-4 lg:gap-16 items-center">
           {/* Left: Terminal Window */}
           <Reveal direction="left">
             <div className="relative perspective-[2000px] group">

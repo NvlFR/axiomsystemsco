@@ -71,9 +71,8 @@ export default function ClawBotSection() {
 
   return (
     <section className="py-24 px-6 relative border-t border-white/[0.08] bg-[#0a0a0b] overflow-hidden">
-      {/* Background ambient glow — berubah sesuai varian aktif */}
       <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] max-w-[100vw] blur-[140px] rounded-full -z-10 pointer-events-none transition-all duration-700"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] max-w-full blur-[140px] rounded-full -z-10 pointer-events-none transition-all duration-700"
         style={{ background: `radial-gradient(ellipse, ${current.glowColor} 0%, transparent 70%)` }}
       />
 

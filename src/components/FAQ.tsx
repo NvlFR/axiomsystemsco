@@ -66,8 +66,20 @@ const faqs = [
     id: "pricing",
     question: "How do you handle pricing?",
     answer:
-      "We operate on a project-based fee structure, starting from $1,500 for standard automation. Maintenance is billed monthly or quarterly.",
+      "We operate on a project-based fee structure, starting from Rp 3,000,000 for standard automation. Maintenance is billed monthly or quarterly.",
     icon: CreditCard,
+  },
+  {
+    id: "legal",
+    question: "Apakah sistem otomasi atau bot ini legal?",
+    answer: "Kami bekerja di area fungsionalitas browser otomatis dan API integration. Kami selalu memprioritaskan metode yang aman (Slow-scraping, Proxy rotation, Human-mimicry) untuk memastikan akun kamu tetap aman dan tidak melanggar ToS platform secara agresif.",
+    icon: Shield,
+  },
+  {
+    id: "maintenance_indo",
+    question: "Gimana kalau websitenya update dan bot-nya mati?",
+    answer: "Tenang, sistem kami didesain dengan monitoring otomatis. Kalau ada perubahan selector atau struktur di web target, tim engineer kami bakal langsung dapet notif dan melakukan update secepatnya agar downtime minimal.",
+    icon: RefreshCw,
   },
 ];
 

@@ -199,11 +199,11 @@ export default function OrderForm() {
                     htmlFor="req"
                     className="text-zinc-400 text-xs font-mono uppercase tracking-wider"
                   >
-                    Mission Objective
+                    Ceritain project atau masalah yang mau kamu otomasi
                   </Label>
                   <Textarea
                     id="req"
-                    placeholder="Describe the target, desired features, and timeline..."
+                    placeholder="Contoh: Saya butuh bot buat monitoring harga kompetitor di marketplace tiap jam dan masukin datanya ke Google Sheet..."
                     required
                     className="bg-white/[0.02] border-white/[0.08] focus:border-white/20 focus:bg-white/[0.04] focus:ring-0 min-h-[120px] rounded-lg text-white font-mono placeholder:text-zinc-600 resize-none p-3 transition-colors"
                     value={requirement}

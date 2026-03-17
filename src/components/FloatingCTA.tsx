@@ -12,7 +12,7 @@ export default function FloatingCTA() {
   return (
     <button
       onClick={handleClick}
-      className="fixed bottom-8 right-8 z-50 group flex items-center justify-center"
+      className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 group flex items-center justify-center scale-90 md:scale-100"
       aria-label="Chat on WhatsApp"
     >
       <div className="absolute inset-0 bg-green-500 rounded-full opacity-20 group-hover:scale-150 transition-transform duration-700 animate-pulse"></div>

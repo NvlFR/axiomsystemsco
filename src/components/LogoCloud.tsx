@@ -2,12 +2,12 @@ import React from "react";
 import Reveal from "./Reveal";
 
 const logos = [
-  { name: "Global Finance", icon: "🌐" },
-  { name: "NextRetail", icon: "🛍️" },
-  { name: "SecureLogistics", icon: "📦" },
-  { name: "QuickTickets", icon: "🎫" },
-  { name: "AlphaDeFi", icon: "💎" },
-  { name: "TechNova", icon: "🚀" },
+  { name: "Maju Logistics", icon: "🚛" },
+  { name: "Skyline EO", icon: "🎟️" },
+  { name: "PT Distro Pangan", icon: "🌾" },
+  { name: "AutoSparepart", icon: "⚙️" },
+  { name: "MarketResearch", icon: "📊" },
+  { name: "Axiom Auto", icon: "🤖" },
 ];
 
 export default function LogoCloud() {

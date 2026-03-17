@@ -45,7 +45,7 @@ export default function ComparisonTable() {
   return (
     <section className="py-32 px-6 relative border-t border-white/[0.08] bg-[#08090a]">
       {/* Ambient Backlight */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] max-w-[100vw] bg-emerald-500/5 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] max-w-full bg-emerald-500/5 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
 
       <div className="max-w-5xl mx-auto space-y-16">
         <Reveal>
