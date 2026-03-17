@@ -203,7 +203,7 @@ export default function OrderForm() {
                   </Label>
                   <Textarea
                     id="req"
-                    placeholder="Contoh: Saya butuh bot buat monitoring harga kompetitor di marketplace tiap jam dan masukin datanya ke Google Sheet..."
+                    placeholder="Saya butuh bot buat monitoring harga kompetitor di marketplace tiap jam dan masukin datanya ke Google Sheet..."
                     required
                     className="bg-white/[0.02] border-white/[0.08] focus:border-white/20 focus:bg-white/[0.04] focus:ring-0 min-h-[120px] rounded-lg text-white font-mono placeholder:text-zinc-600 resize-none p-3 transition-colors"
                     value={requirement}

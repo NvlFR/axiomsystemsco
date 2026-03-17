@@ -136,15 +136,15 @@ export default function Hero() {
               <span className="relative inline-block mt-1 md:mt-0">
                 <span className="text-white block md:inline drop-shadow-[0_0_50px_rgba(255,255,255,0.4)]">Manual Work</span>
                 <span className="absolute -top-6 -right-4 md:-top-5 md:-right-3 text-[7px] font-mono text-emerald-400 bg-emerald-500/15 px-1.5 py-0.5 rounded border border-emerald-500/30 rotate-6 select-none pointer-events-none tracking-widest whitespace-nowrap shadow-[0_0_20px_rgba(16,185,129,0.2)] backdrop-blur-md z-20">
-                   END_OF_ERA
+                  END_OF_ERA
                 </span>
               </span>
-              <span className="flex flex-wrap md:block items-center gap-1.5 md:gap-0 mt-3 md:mt-2 text-[16px] md:text-3xl lg:text-4xl font-normal text-zinc-400 tracking-tight leading-loose md:leading-tight">
-                <span className="whitespace-nowrap">Own your time. Automate</span>
+              <span className="block mt-3 md:mt-2 text-[15px] sm:text-[18px] md:text-2xl lg:text-3xl font-normal text-zinc-400 tracking-tight leading-loose md:leading-tight whitespace-nowrap">
+                <span>Own your time. Automate{" "}</span>
                 <span
-                  className={`bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-emerald-400 font-extrabold inline-block transition-all duration-700 ease-in-out min-w-[80px] md:min-w-[140px] pl-1 md:pl-0 ${fade
-                    ? "opacity-100 transform translate-y-0 filter blur-0"
-                    : "opacity-0 transform translate-y-4 filter blur-sm"
+                  className={`bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-emerald-400 font-extrabold inline-block transition-all duration-700 ease-in-out ${fade
+                      ? "opacity-100 transform translate-y-0 filter blur-0"
+                      : "opacity-0 transform translate-y-4 filter blur-sm"
                     }`}
                 >
                   {WORDS[textIndex]}.
@@ -171,7 +171,7 @@ export default function Hero() {
                 className="h-[50px] md:h-[60px] w-full sm:w-auto px-10 rounded-[20px] bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 hover:from-emerald-500 hover:via-teal-500 hover:to-emerald-500 text-white transition-all text-sm md:text-lg font-black border-0 relative group overflow-hidden shadow-[0_15px_40px_rgba(16,185,129,0.3)] hover:shadow-[0_20px_50px_rgba(16,185,129,0.5)] active:scale-95 duration-300 ring-1 ring-white/10"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                   SCALE MY BUSINESS
+                  SCALE MY BUSINESS
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                 </span>
                 {/* Shiny overlay */}
@@ -200,12 +200,12 @@ export default function Hero() {
                 {/* Background Glows (Higher Opacity) */}
                 <div className="absolute inset-0 bg-blue-500/10 blur-[120px] rounded-full"></div>
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-purple-500/15 blur-[80px] rounded-full animate-pulse"></div>
-                
+
                 {/* Rotating Rings (Clearly Visible) */}
                 <div className="absolute inset-0 border-[1.5px] border-blue-500/30 rounded-full animate-[spin_25s_linear_infinite] shadow-[0_0_20px_rgba(59,130,246,0.1)]"></div>
                 <div className="absolute inset-8 border-[1.5px] border-purple-500/20 rounded-full animate-[spin_20s_linear_infinite_reverse]"></div>
                 <div className="absolute inset-20 border-[1px] border-white/10 rounded-full animate-[spin_40s_linear_infinite]"></div>
-                
+
                 {/* Visual Pipeline Logic (Cards) */}
                 {/* Card 1: Data Ingest */}
                 <div className="absolute top-[0%] left-[0%] w-48 glass-panel rounded-2xl p-4 border-blue-500/30 shadow-[0_15px_40px_rgba(0,0,0,0.5)] animate-float [animation-duration:5s] z-30">

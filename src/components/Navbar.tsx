@@ -33,7 +33,7 @@ export default function Navbar() {
     { name: "Services", href: "#services" },
     { name: "Process", href: "#process" },
     { name: "Case Studies", href: "#casestudies" },
-    { name: "About", href: "#about" },
+    { name: "About", href: "#" },
   ];
 
   return (
