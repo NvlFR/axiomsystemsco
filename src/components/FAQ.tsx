@@ -22,51 +22,51 @@ import { cn } from "@/lib/utils";
 const faqs = [
   {
     id: "bans",
-    question: "Do you guarantee I won't get banned?",
+    question: "Apakah Anda menjamin saya tidak akan terkena ban?",
     answer:
-      "We use advanced browser fingerprinting and residential proxy rotation to mimic human behavior perfectly. While no automation is risk-free, our methods are statistically safer than manual spamming.",
+      "Kami menggunakan fingerprinting browser tingkat lanjut dan rotasi proxy residensial untuk meniru perilaku manusia secara sempurna. Meskipun tidak ada otomasi yang 100% bebas risiko, metode kami secara statistik jauh lebih aman daripada spamming manual.",
     icon: Shield,
   },
   {
     id: "speed",
-    question: "How fast can you build a custom bot?",
+    question: "Seberapa cepat Anda bisa membangun bot kustom?",
     answer:
-      "Common targets (Ticketmaster, Shopify) can be deployed in 48 hours. Complex custom sites typically require 5-10 business days for discovery and testing.",
+      "Target umum (Ticketmaster, Shopify) dapat dideploy dalam 48 jam. Situs kustom yang kompleks biasanya membutuhkan 5-10 hari kerja untuk riset dan pengujian.",
     icon: Clock,
   },
   {
     id: "source",
-    question: "Do you offer source code?",
+    question: "Apakah Anda menawarkan source code?",
     answer:
-      "Yes, for Enterprise plans we provide full source code and documentation. Standard deployments are licensed as managed executables.",
+      "Ya, untuk paket Enterprise kami menyediakan source code lengkap dan dokumentasi. Deployment standar dilisensikan sebagai managed executables.",
     icon: Code2,
   },
   {
     id: "updates",
-    question: "What happens if the website updates?",
+    question: "Apa yang terjadi jika website target update?",
     answer:
-      "We offer maintenance retainers. If a target site changes their anti-bot protection, we patch your software within 24-48 hours.",
+      "Kami menawarkan layanan maintenance. Jika situs target mengubah proteksi anti-bot mereka, kami akan melakukan patch pada software Anda dalam waktu 24-48 jam.",
     icon: RefreshCw,
   },
   {
     id: "scaling",
-    question: "Can I run 10,000+ tasks simultaneously?",
+    question: "Bisakah saya menjalankan 10.000+ task secara bersamaan?",
     answer:
-      "Absolutely. Our architecture is built on Kubernetes and stateless Go microservices. We can scale horizontally to handle infinite load as long as you have the proxies to support it.",
+      "Tentu saja. Arsitektur kami dibangun di atas Kubernetes dan microservices Go yang stateless. Kami dapat melakukan scale secara horizontal untuk menangani beban tanpa batas selama Anda memiliki proxy yang mendukung.",
     icon: Network,
   },
   {
     id: "integration",
-    question: "Can you integrate with my existing API?",
+    question: "Bisakah Anda berintegrasi dengan API saya yang sudah ada?",
     answer:
-      "Yes. We support webhooks, REST APIs, GraphQL, and direct database connections (Postgres/Redis). We can pipe data directly into your CRM or dashboard.",
+      "Ya. Kami mendukung webhooks, REST API, GraphQL, dan koneksi database langsung (Postgres/Redis). Kami dapat menyalurkan data langsung ke CRM atau dashboard Anda.",
     icon: Puzzle,
   },
   {
     id: "pricing",
-    question: "How do you handle pricing?",
+    question: "Bagaimana Anda menangani harga?",
     answer:
-      "We operate on a project-based fee structure, starting from Rp 3,000,000 for standard automation. Maintenance is billed monthly or quarterly.",
+      "Kami beroperasi dengan struktur biaya berbasis proyek, mulai dari Rp 3.000.000 untuk otomasi standar. Maintenance ditagih bulanan atau tahunan.",
     icon: CreditCard,
   },
   {
@@ -336,7 +336,7 @@ export default function FAQ() {
                         System Patched
                       </h4>
                       <p className="text-sm text-zinc-500 mt-2">
-                        Latest update:{" "}
+                        Update terakhir:{" "}
                         <span className="text-emerald-400">2 mins ago</span>
                       </p>
                     </div>

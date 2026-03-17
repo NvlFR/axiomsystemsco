@@ -86,7 +86,7 @@ export default function PricingCalculator() {
               <span>Project Scoping</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white">
-              Ceritakan Project Kamu
+              Tell Us About Your Project.
             </h2>
             <p className="text-xl text-zinc-400 leading-relaxed">
               Tidak ada harga fix — setiap sistem dibangun custom.{" "}

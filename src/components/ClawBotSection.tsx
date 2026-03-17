@@ -10,7 +10,7 @@ const variants = [
     badge: "Full Power",
     badgeColor: "text-fuchsia-400 bg-fuchsia-500/10 border-fuchsia-500/30",
     name: "OpenClaw",
-    tagline: "The AI that actually does things.",
+    tagline: "AI yang benar-benar bekerja.",
     description:
       "AI agent personal yang bisa benar-benar bekerja — browsing web, isi form, eksekusi script, dan hadir langsung di WhatsApp, Telegram, atau Slack bisnis kamu.",
     url: "https://openclaw.ai",
@@ -31,7 +31,7 @@ const variants = [
     badge: "Lightweight",
     badgeColor: "text-cyan-400 bg-cyan-500/10 border-cyan-500/30",
     name: "PicoClaw",
-    tagline: "Ultra-efficient AI. $10 hardware. 10MB RAM.",
+    tagline: "AI ultra-efisien. $10 hardware. 10MB RAM.",
     description:
       "Varian ultra-ringan dari ClawBot — didesain untuk jalan di hardware murah (Raspberry Pi, microcontroller RISC-V). Boot dalam 1 detik, footprint 99% lebih kecil.",
     url: "https://picoclaw.io",
@@ -185,14 +185,14 @@ export default function ClawBotSection() {
                       {/* User Message */}
                       <div className="flex justify-end relative z-10 w-full">
                          <div className="bg-white/10 text-zinc-200 text-[11px] sm:text-sm px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl rounded-tr-sm max-w-[90%] sm:max-w-[85%] leading-relaxed">
-                            Please scrape all latest orders from the dashboard and put them in my GSheet.
+                            Tolong ambil semua order terbaru dari dashboard dan masukkan ke GSheet saya.
                          </div>
                       </div>
 
                       {/* Bot Message */}
                       <div className="flex justify-start relative z-10 w-full animate-in fade-in slide-in-from-bottom-2 duration-700">
                          <div className="bg-[#1a1b1e] border border-white/[0.05] text-zinc-300 text-[11px] sm:text-xs p-3 rounded-2xl rounded-tl-sm w-[95%] sm:w-[85%] space-y-2 sm:space-y-3 shadow-lg">
-                            <p>On it! ⚡ Executing workflow...</p>
+                            <p>Siap! ⚡ Menjalankan workflow...</p>
                             
                             {/* Inner Terminal / Operation Frame */}
                             <div className="bg-black/50 rounded-lg p-2.5 sm:p-3 font-mono text-[9px] sm:text-[10px] space-y-1.5 sm:space-y-2 border border-white/[0.05]">
@@ -201,19 +201,19 @@ export default function ClawBotSection() {
                                   <span className={current.id === "openclaw" ? "text-fuchsia-500" : "text-cyan-500"}>Running</span>
                                </div>
                                <div className="flex items-center gap-1.5 sm:gap-2 text-zinc-400 whitespace-nowrap overflow-hidden text-ellipsis">
-                                  <span className="text-emerald-500 shrink-0">✓</span> Accessing portal...
+                                  <span className="text-emerald-500 shrink-0">✓</span> Mengakses portal...
                                </div>
                                <div className="flex items-center gap-1.5 sm:gap-2 text-zinc-400 whitespace-nowrap overflow-hidden text-ellipsis">
-                                  <span className="text-emerald-500 shrink-0">✓</span> Bypassing captchas...
+                                  <span className="text-emerald-500 shrink-0">✓</span> Melewati captcha...
                                </div>
                                <div className="flex items-center gap-1.5 sm:gap-2 text-white whitespace-nowrap overflow-hidden text-ellipsis">
-                                  <Loader2 className="w-2.5 h-2.5 sm:w-3 sm:h-3 animate-spin text-zinc-400 shrink-0" /> Extracting 142 rows...
+                                  <Loader2 className="w-2.5 h-2.5 sm:w-3 sm:h-3 animate-spin text-zinc-400 shrink-0" /> Ekstraksi 142 baris...
                                </div>
                             </div>
 
                             <p className="text-[9px] sm:text-[10px] text-zinc-500 flex items-center gap-1.5">
                                 <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-amber-400 shrink-0" />
-                                <span className="truncate">Action requires no human intervention.</span>
+                                <span className="truncate">Aksi berjalan otomatis tanpa campur tangan manusia.</span>
                             </p>
                          </div>
                       </div>

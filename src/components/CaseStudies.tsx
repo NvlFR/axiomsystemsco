@@ -9,7 +9,7 @@ const caseStudies = [
     problem: "Input manual data harga kompetitor (20 jam/minggu) di 3 marketplace besar.",
     solution: "Custom Scraper Engine yang update data tiap 1 jam ke Cloud Database & Dashboard.",
     result: "Full Automation",
-    stats: "ROI: Hemat 80 Jam / Bulan",
+    stats: "ROI: 80 Hours Saved / Month",
     icon: <Clock className="w-5 h-5" />,
     color: "from-blue-500/20 to-blue-600/5",
     accent: "text-blue-400"
@@ -20,7 +20,7 @@ const caseStudies = [
     problem: "Lead yang masuk via WA sering tidak terbalas saat jam kantor tutup.",
     solution: "Gemini AI Agent yang menghandle tanya jawab & booking jadwal survey 24/7.",
     result: "+240% Conv. Rate",
-    stats: "ROI: Balik Modal < 1 Bulan",
+    stats: "ROI: Breakeven < 1 Month",
     icon: <Target className="w-5 h-5" />,
     color: "from-purple-500/20 to-purple-600/5",
     accent: "text-purple-400"

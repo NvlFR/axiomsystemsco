@@ -154,9 +154,9 @@ export default function Hero() {
 
             {/* Subheadline (Improved Contrast & Flow) */}
             <p className="animate-fade-in-up [animation-delay:400ms] text-[14px] md:text-[20px] text-zinc-400 max-w-[340px] md:max-w-xl leading-relaxed font-normal tracking-wide text-pretty md:text-balance">
-              The era of manual work is over. Axiom systems build the{" "}
-              <span className="text-white font-semibold">high-performance infrastructure</span> you need to scale{" "}
-              <span className="text-white font-semibold italic underline decoration-emerald-500/40 underline-offset-4">without adding headcount.</span>
+              Era kerja manual sudah berakhir. Sistem Axiom membangun{" "}
+              <span className="text-white font-semibold">infrastruktur berperforma tinggi</span> yang kamu butuhkan untuk skala bisnis{" "}
+              <span className="text-white font-semibold italic underline decoration-emerald-500/40 underline-offset-4">tanpa harus menambah tim.</span>
               <span className="block mt-5 text-emerald-400 font-mono text-[10px] md:text-xs tracking-widest font-bold antialiased leading-none">
                 ✓ KLIEN KAMI MENGHEMAT RATA-RATA 40 JAM KERJA PER MINGGU.
               </span>
@@ -184,7 +184,7 @@ export default function Hero() {
                   className="h-[50px] md:h-[60px] w-full sm:w-auto px-8 rounded-[20px] bg-white/[0.02] border border-white/[0.05] text-zinc-500 hover:text-white hover:bg-white/5 text-sm md:text-base font-medium transition-all group"
                 >
                   <span className="group-hover:translate-x-0.5 transition-transform flex items-center gap-2">
-                    Explore Capabilities
+                    Lihat Kemampuan Kami
                     <ChevronRight className="w-4 h-4 opacity-30 group-hover:opacity-100" />
                   </span>
                 </Button>
@@ -356,12 +356,10 @@ export default function Hero() {
                 </h2>
                 <div className="space-y-4">
                   <p className="text-zinc-400 text-lg leading-relaxed max-w-md font-normal">
-                    Axiom runs an isolated, <span className="text-white font-medium">headless browser environment</span> that
-                    mimics human biometrics to bypass anti-bot systems
-                    effortlessly.
+                    Axiom menjalankan lingkungan <span className="text-white font-medium">browser headless yang terisolasi</span> yang meniru biometrik manusia untuk melewati sistem anti-bot dengan mudah.
                   </p>
                   <p className="text-zinc-400 text-lg leading-relaxed max-w-md font-normal">
-                    Designed for <span className="text-blue-400/80 font-medium italic">stealth</span> and <span className="text-purple-400/80 font-medium italic">speed</span>.
+                    Didesain untuk <span className="text-blue-400/80 font-medium italic">kerahasiaan</span> dan <span className="text-purple-400/80 font-medium italic">kecepatan tinggi</span>.
                   </p>
                 </div>
               </div>

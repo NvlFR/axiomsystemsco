@@ -177,8 +177,7 @@ export default function LiveFormDemo() {
                 <span className="text-white/40">You get the result.</span>
               </h2>
               <p className="text-zinc-300 md:text-linear-text-secondary text-lg leading-relaxed max-w-md">
-                Our bots don't just fill forms. They emulate human biometric
-                data to bypass Cloudflare and ReCaptcha V3 invisibly.
+                Bot kami tidak hanya mengisi formulir. Mereka meniru data biometrik manusia untuk melewati Cloudflare dan ReCaptcha V3 secara tidak terlihat.
               </p>
             </div>
 
@@ -297,7 +296,7 @@ export default function LiveFormDemo() {
                       ) : step === "success" ? (
                         "Order Confirmed"
                       ) : (
-                        "Place Order"
+                        "HTML tidak terstruktur, API tersembunyi, atau SPA kompleks? Tidak masalah. Bot kami mengubah kekacauan menjadi data JSON yang bersih dan siap pakai dalam hitungan milidetik."
                       )}
                     </div>
                   </div>

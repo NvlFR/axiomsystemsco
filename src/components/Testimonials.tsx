@@ -11,7 +11,7 @@ const testimonials = [
     content: "Dulu 4 jam tiap pagi cuma buat input data — sekarang jalan sendiri lewat WA dalam 5 menit. Bisa fokus ke hal yang lebih penting.",
     before: "4 Jam / Hari",
     after: "5 Menit",
-    metric: "Hemat 95% Waktu Operasional",
+    metric: "95% Operational Time Saved",
     verified: true,
     image: "/testimonials/andik.png"
   },
@@ -22,7 +22,7 @@ const testimonials = [
     content: "Sistem ticketing Axiom bener-bener game changer. Booking slot yang biasanya manual dan rebutan, sekarang otomatis. ROI balik modal dalam seminggu.",
     before: "Manual & Lambat",
     after: "Otomatis & Presisi",
-    metric: "100% Slot Terisi Otomatis",
+    metric: "100% Automatic Slot Fill Rate",
     verified: true,
     image: "/testimonials/raka.png"
   },
@@ -33,7 +33,7 @@ const testimonials = [
     content: "Dulu tim gue 2 orang kerja 8 jam buat ngumpulin data kompetitor. Sekarang jalan otomatis tiap malam, pagi udah ada di dashboard rapi.",
     before: "16 Jam/Hari (2 Staf)",
     after: "Otomatis 24/7",
-    metric: "Efisiensi Data 10x Lipat",
+    metric: "10x Data Extraction Efficiency",
     verified: true,
     image: "/testimonials/meta.png"
   },
@@ -44,7 +44,7 @@ const testimonials = [
     content: "Orderan masuk via WA ribuan chat dapet dilayani bot dengan lancar. Tidak ada lagi customer yang kabur karena lama dibalas.",
     before: "Response Time 2 Jam",
     after: "Instant Reply",
-    metric: "Konversi Naik 40%",
+    metric: "40% Conversion Increase",
     verified: true,
     image: "/testimonials/budi.png"
   },
@@ -103,11 +103,11 @@ export default function Testimonials() {
 
                   <div className="grid grid-cols-2 gap-3 p-4 rounded-2xl bg-white/[0.03] border border-white/5">
                     <div className="space-y-1">
-                      <div className="text-[10px] uppercase text-zinc-500 font-bold tracking-tight">Sebelum</div>
+                      <div className="text-[10px] uppercase text-zinc-500 font-bold tracking-tight">BEFORE</div>
                       <div className="text-sm font-medium text-zinc-400 line-through decoration-zinc-600 truncate">{t.before}</div>
                     </div>
                     <div className="space-y-1 border-l border-white/5 pl-3">
-                      <div className="text-[10px] uppercase text-emerald-500/70 font-bold tracking-tight">Sesudah</div>
+                      <div className="text-[10px] uppercase text-emerald-500/70 font-bold tracking-tight">AFTER</div>
                       <div className="text-sm font-bold text-emerald-400 truncate">{t.after}</div>
                     </div>
                   </div>

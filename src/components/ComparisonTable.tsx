@@ -54,8 +54,7 @@ export default function ComparisonTable() {
               Why Leaders Choose Axiom.
             </h2>
             <p className="text-xl text-zinc-400 leading-relaxed">
-              Stop gambling with freelancers. Get enterprise-grade
-              infrastructure built for war.
+              Jangan bertaruh dengan freelancer. Dapatkan infrastruktur kelas enterprise yang dibangun untuk menang.
             </p>
           </div>
         </Reveal>
@@ -162,14 +161,13 @@ export default function ComparisonTable() {
           {/* Subnote */}
           <div className="mt-8 text-center">
             <p className="text-zinc-500 text-sm">
-              Ready to upgrade?{" "}
-              <button
+              Jadwalkan <button
                 onClick={() =>
                   window.dispatchEvent(new CustomEvent("open-contact-modal"))
                 }
                 className="text-white underline underline-offset-4 hover:text-emerald-400 transition-colors cursor-pointer font-bold"
               >
-                Schedule a technical audit
+                audit teknis sekarang
               </button>
               .
             </p>

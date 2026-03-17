@@ -20,7 +20,7 @@ const services = [
   {
     title: "Custom Ticket Snipers",
     description:
-      "Stop losing to faster competition. We build the high-speed machinery needed to secure high-demand assets instantly, every time.",
+      "Berhenti kalah cepat dari kompetitor. Kami membangun mesin berkecepatan tinggi yang dibutuhkan untuk mengamankan aset permintaan tinggi secara instan, setiap saat.",
     icon: Train,
     className: "md:col-span-4",
     gradient: "from-blue-500/30 via-blue-500/5 to-transparent",
@@ -38,7 +38,7 @@ const services = [
   {
     title: "Auction & Bidding Bots",
     description:
-      "Dominate auctions with millisecond-precision. Our snipers wait for the perfect moment to strike.",
+      "Dominasi lelang dengan presisi milidetik. Sniper kami menunggu momen sempurna untuk mengeksekusi penawaran terbaik.",
     icon: ShoppingCart,
     className: "md:col-span-4",
     gradient: "from-amber-500/20 via-amber-500/5 to-transparent",
@@ -55,7 +55,7 @@ const services = [
   {
     title: "Queue Bypass Systems",
     description:
-      "Skip the line on limited drops. We reverse-engineer queues to get you through the front door.",
+      "Lewati antrean pada rilis terbatas. Kami melakukan reverse-engineer sistem antrean untuk memastikan kamu masuk lebih awal.",
     icon: Zap,
     className: "md:col-span-4",
     gradient: "from-emerald-500/20 via-emerald-500/5 to-transparent",
@@ -72,7 +72,7 @@ const services = [
   {
     title: "Enterprise Scraping",
     description:
-      "Turn the entire web into your dataset. High-volume extraction with zero IP bans or blocks.",
+      "Ubah seluruh web menjadi kumpulan data kamu. Ekstraksi volume tinggi tanpa risiko banned IP atau pemblokiran.",
     icon: Database,
     className: "md:col-span-4",
     gradient: "from-cyan-500/20 via-cyan-500/5 to-transparent",
@@ -89,7 +89,7 @@ const services = [
   {
     title: "Crypto & DeFi Automation",
     description:
-      "MEV bots and arbitrage engines. Financial weapons engineered for the decentralized web.",
+      "Bot MEV dan mesin arbitrase. Senjata finansial yang dirancang khusus untuk ekosistem desentralisasi (Web3).",
     icon: Landmark,
     className: "md:col-span-4",
     gradient: "from-indigo-500/20 via-indigo-500/5 to-transparent",
@@ -106,7 +106,7 @@ const services = [
   {
     title: "Automation Consulting",
     description:
-      "Stop leaking time. We audit your workflows and build the tools to eliminate manual labor forever.",
+      "Berhenti membuang waktu. Kami mengaudit alur kerja kamu dan membangun alat untuk mengeliminasi kerja manual selamanya.",
     icon: Code2,
     className: "md:col-span-4",
     gradient: "from-pink-500/20 via-pink-500/5 to-transparent",
@@ -171,8 +171,8 @@ export default function Services() {
               Solutions We Build.
             </h2>
             <p className="text-xl text-zinc-400 leading-relaxed font-normal">
-              From simple scripts to <span className="text-white font-medium">complex distributed systems</span>, we engineer
-              the automation tools your business needs to <span className="text-blue-400 font-semibold italic underline decoration-blue-500/20 underline-offset-4 tracking-tight">win.</span>
+              Dari script sederhana hingga <span className="text-white font-medium">sistem terdistribusi yang kompleks</span>, kami merancang
+              alat otomasi yang dibutuhkan bisnis kamu untuk <span className="text-blue-400 font-semibold italic underline decoration-blue-500/20 underline-offset-4 tracking-tight">menang.</span>
             </p>
           </div>
         </Reveal>

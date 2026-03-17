@@ -88,8 +88,8 @@ export default function Process() {
               Engineered for Velocity.
             </h2>
             <p className="text-xl text-zinc-400 leading-relaxed">
-              We treat automation like software engineering. Structured,
-              scalable, and secure by default.
+              Kami memperlakukan otomasi layaknya software engineering. Terstruktur,
+              scalable, dan aman secara default.
             </p>
           </div>
         </Reveal>

@@ -58,8 +58,8 @@ export default function OrderForm() {
             </h2>
 
             <p className="text-xl text-zinc-400 leading-relaxed">
-              We don't just build bots; we build unfair advantages. Partner with
-              us to secure the infrastructure your business needs to scale.
+              Kami tidak hanya membangun bot; kami membangun keunggulan kompetitif. Bermitralah dengan
+              kami untuk mengamankan infrastruktur yang dibutuhkan bisnis Anda untuk scale-up.
             </p>
 
             <div className="space-y-4 pt-4">
@@ -72,7 +72,7 @@ export default function OrderForm() {
                     Direct Engineer Access
                   </h4>
                   <p className="text-sm text-zinc-500">
-                    No middlemen. Speak directly to the architects.
+                    Tanpa perantara. Berbicara langsung dengan para engineer kami.
                   </p>
                 </div>
               </div>
@@ -83,7 +83,7 @@ export default function OrderForm() {
                     Ironclad Confidentiality
                   </h4>
                   <p className="text-sm text-zinc-400">
-                    Your trade secrets are safe. We prioritize NDA-standard privacy for every single deployment.
+                    Rahasia dagang Anda aman. Kami memprioritaskan privasi standar NDA untuk setiap deployment.
                   </p>
                 </div>
               </div>
@@ -115,7 +115,7 @@ export default function OrderForm() {
                   Initialize Partnership
                 </h3>
                 <p className="text-sm text-zinc-400">
-                  Fill out the manifesto below to request access.
+                  Isi formulir di bawah ini untuk memulai kerjasama.
                 </p>
               </div>
 
@@ -126,7 +126,7 @@ export default function OrderForm() {
                       htmlFor="name"
                       className="text-zinc-500 text-[10px] font-bold uppercase tracking-widest"
                     >
-                      Your Name
+                      Nama Lengkap
                     </Label>
                     <Input
                       id="name"
@@ -142,7 +142,7 @@ export default function OrderForm() {
                       htmlFor="phone"
                       className="text-zinc-500 text-[10px] font-bold uppercase tracking-widest"
                     >
-                      WhatsApp / Phone
+                      Nomor WhatsApp
                     </Label>
                     <Input
                       id="phone"
@@ -163,7 +163,7 @@ export default function OrderForm() {
                     </Label>
                     <Select value={service} onValueChange={setService}>
                       <SelectTrigger className="bg-white/[0.02] border-white/[0.08] focus:border-white/20 focus:bg-white/[0.04] focus:ring-0 h-11 text-white font-mono transition-colors">
-                        <SelectValue placeholder="Select..." />
+                        <SelectValue placeholder="Pilih..." />
                       </SelectTrigger>
                       <SelectContent className="bg-[#0f1011] border-white/10 text-white">
                         <SelectItem value="Sniper Bot">Sniper Bot</SelectItem>
@@ -182,10 +182,10 @@ export default function OrderForm() {
                     </Label>
                     <Select value={budget} onValueChange={setBudget}>
                       <SelectTrigger className="bg-white/[0.02] border-white/[0.08] focus:border-white/20 focus:bg-white/[0.04] focus:ring-0 h-11 text-white font-mono transition-colors">
-                        <SelectValue placeholder="Range..." />
+                        <SelectValue placeholder="Estimasi..." />
                       </SelectTrigger>
                       <SelectContent className="bg-[#0f1011] border-white/10 text-white">
-                        <SelectItem value="< $1k">Under $1k</SelectItem>
+                        <SelectItem value="< $1k">Dibawah $1k</SelectItem>
                         <SelectItem value="$1k - $5k">$1k - $5k</SelectItem>
                         <SelectItem value="$5k - $10k">$5k - $10k</SelectItem>
                         <SelectItem value="$10k+">$10k+</SelectItem>
@@ -220,8 +220,7 @@ export default function OrderForm() {
                 </Button>
 
                 <p className="text-[10px] text-center text-zinc-600">
-                  By clicking above, you agree to initiate a secure WhatsApp
-                  encryption tunnel.
+                  Dengan mengklik tombol di atas, Anda menyetujui untuk memulai terowongan enkripsi WhatsApp yang aman.
                 </p>
               </form>
             </CardContent>
