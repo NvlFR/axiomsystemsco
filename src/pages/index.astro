@@ -1,6 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Hero from '@/components/Hero';
+import LogoCloud from '@/components/LogoCloud';
 import Services from '@/components/Services';
 import Process from '@/components/Process';
 import FAQ from '@/components/FAQ';
@@ -17,11 +18,13 @@ import ClawBotSection from '@/components/ClawBotSection';
 import BookingModal from '@/components/BookingModal';
 import Footer from '@/components/Footer';
 import { Command } from 'lucide-react';
+import ScrollToTop from '@/components/ScrollToTop';
 ---
 
 <Layout title="AxiomSystemsCo - Custom Bot Development Agency">
   <main>
     <Hero client:load />
+    <LogoCloud client:visible />
     
     <LiveFormDemo client:visible />
     <DataExtractionDemo client:visible />
@@ -31,12 +34,19 @@ import { Command } from 'lucide-react';
 
     <Process client:visible />
     <Services client:visible />
+    
+    {/* Subtle Section Divider */}
+    <div class="h-24 bg-gradient-to-b from-[#08090a] to-[#0a0a0b] relative">
+      <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-px bg-white/[0.03]"></div>
+    </div>
+    
     <ClawBotSection client:visible />
     <ComparisonTable client:visible />
     <PricingCalculator client:visible />
     <FAQ client:visible />
     <OrderForm client:visible />
     <FloatingCTA client:load />
+    <ScrollToTop client:load />
     <BookingModal client:load />
   </main>
   <Footer client:visible />

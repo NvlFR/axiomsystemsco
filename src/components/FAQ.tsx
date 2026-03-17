@@ -95,52 +95,56 @@ export default function FAQ() {
               </h2>
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-4">
               {faqs.map((faq, index) => (
-                <div
-                  key={index}
-                  onClick={() => setActiveTab(index)}
-                  className={cn(
-                    "group p-6 rounded-2xl border transition-all duration-300 cursor-pointer flex items-start gap-4",
-                    activeTab === index
-                      ? "bg-[#18181b] border-white/[0.08] shadow-2xl"
-                      : "bg-transparent border-transparent hover:bg-white/[0.02]",
-                  )}
-                >
+                <div key={index}>
                   <div
+                    onClick={() => setActiveTab(index)}
                     className={cn(
-                      "mt-1 w-8 h-8 rounded-lg flex items-center justify-center transition-colors duration-300",
+                      "group p-6 rounded-2xl border transition-all duration-300 cursor-pointer flex items-start gap-4",
                       activeTab === index
-                        ? "bg-white text-black"
-                        : "bg-white/[0.05] text-zinc-500 group-hover:text-zinc-300",
+                        ? "bg-[#18181b] border-white/10 shadow-2xl scale-[1.02]"
+                        : "bg-transparent border-transparent hover:bg-white/[0.03] hover:border-white/[0.05]",
                     )}
                   >
-                    <faq.icon className="w-4 h-4" />
-                  </div>
-                  <div className="space-y-2">
-                    <h3
-                      className={cn(
-                        "text-lg font-medium transition-colors duration-300",
-                        activeTab === index
-                          ? "text-white"
-                          : "text-zinc-400 group-hover:text-zinc-200",
-                      )}
-                    >
-                      {faq.question}
-                    </h3>
                     <div
                       className={cn(
-                        "grid transition-[grid-template-rows] duration-500 ease-out",
+                        "mt-1 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300",
                         activeTab === index
-                          ? "grid-rows-[1fr] opacity-100"
-                          : "grid-rows-[0fr] opacity-0",
+                          ? "bg-blue-600 text-white shadow-[0_0_20px_rgba(37,99,235,0.4)]"
+                          : "bg-white/[0.05] text-zinc-500 group-hover:bg-white/[0.08] group-hover:text-zinc-300",
                       )}
                     >
-                      <p className="overflow-hidden text-zinc-400 text-sm leading-relaxed">
-                        {faq.answer}
-                      </p>
+                      <faq.icon className="w-5 h-5" />
+                    </div>
+                    <div className="space-y-3 flex-1">
+                      <h3
+                        className={cn(
+                          "text-lg font-bold transition-colors duration-300",
+                          activeTab === index
+                            ? "text-white"
+                            : "text-zinc-400 group-hover:text-zinc-200",
+                        )}
+                      >
+                        {faq.question}
+                      </h3>
+                      <div
+                        className={cn(
+                          "grid transition-[grid-template-rows,opacity] duration-500 ease-out",
+                          activeTab === index
+                            ? "grid-rows-[1fr] opacity-100"
+                            : "grid-rows-[0fr] opacity-0",
+                        )}
+                      >
+                        <p className="overflow-hidden text-zinc-400 text-sm leading-relaxed border-t border-white/5 pt-3 mt-1">
+                          {faq.answer}
+                        </p>
+                      </div>
                     </div>
                   </div>
+                  {index < faqs.length - 1 && (
+                    <div className="mx-8 h-px bg-white/[0.03]"></div>
+                  )}
                 </div>
               ))}
             </div>

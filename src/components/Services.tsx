@@ -20,43 +20,42 @@ const services = [
   {
     title: "Custom Ticket Snipers",
     description:
-      "Bespeak software to secure high-demand assets instantly. Includes advanced proxy rotation, CAPTCHA solving, and session management.",
+      "Stop losing to faster competition. We build the high-speed machinery needed to secure high-demand assets instantly, every time.",
     icon: Train,
-    className: "md:col-span-6",
-    gradient: "from-purple-500/20 via-purple-500/5 to-transparent",
-    border: "group-hover:border-purple-500/50",
-    iconColor: "text-purple-400",
+    className: "md:col-span-4",
+    gradient: "from-blue-500/30 via-blue-500/5 to-transparent",
+    border: "group-hover:border-blue-500/50",
+    iconColor: "text-blue-400",
     pattern: "circuit",
     features: [
-      "Residential Proxy Network Integration",
-      "TLS Fingerprint Spoofing (Ja3/H2)",
-      "Automated CAPTCHA Solving (v2/v3/Enterprise)",
-      "Multi-threaded Task Execution",
+      "Residential Proxy Network",
+      "TLS Fingerprint Spoofing",
+      "CAPTCHA Solver (v2/v3)",
+      "Multi-threaded Tasks",
     ],
-    tech: ["Go", "Redis", "gRPC", "Docker"],
+    tech: ["Go", "Redis", "Docker"],
   },
   {
     title: "Auction & Bidding Bots",
     description:
-      "Dominate auctions with millisecond-precision execution. Our snipers wait for the perfect moment to strike.",
+      "Dominate auctions with millisecond-precision. Our snipers wait for the perfect moment to strike.",
     icon: ShoppingCart,
-    className: "md:col-span-6",
+    className: "md:col-span-4",
     gradient: "from-amber-500/20 via-amber-500/5 to-transparent",
     border: "group-hover:border-amber-500/50",
     iconColor: "text-amber-400",
     pattern: "dots",
     features: [
-      "Millisecond Latency Optimization",
       "WebSocket Real-time Monitoring",
-      "Smart Bidding Strategies",
+      "Smart Bidding Logic",
       "Anti-Detection Measures",
     ],
-    tech: ["Golang", "Node.js", "WebSockets"],
+    tech: ["Node.js", "WebSockets"],
   },
   {
     title: "Queue Bypass Systems",
     description:
-      "Skip the line on limited-availability drops. We reverse-engineer queues to get you through the front door.",
+      "Skip the line on limited drops. We reverse-engineer queues to get you through the front door.",
     icon: Zap,
     className: "md:col-span-4",
     gradient: "from-emerald-500/20 via-emerald-500/5 to-transparent",
@@ -65,16 +64,15 @@ const services = [
     pattern: "grid",
     features: [
       "Virtual Queue Skipping",
-      "Token Generation & Injection",
-      "Headless Browser Clustering",
+      "Token Generation",
       "Cloudflare Turnstile Bypass",
     ],
-    tech: ["Node.js", "Golang", "Puppeteer"],
+    tech: ["Node.js", "Puppeteer"],
   },
   {
     title: "Enterprise Scraping",
     description:
-      "Turn the entire web into your database. High-volume extraction with zero IP bans.",
+      "Turn the entire web into your dataset. High-volume extraction with zero IP bans or blocks.",
     icon: Database,
     className: "md:col-span-4",
     gradient: "from-cyan-500/20 via-cyan-500/5 to-transparent",
@@ -83,16 +81,15 @@ const services = [
     pattern: "data",
     features: [
       "Distributed Extraction Pipeline",
-      "Auto-Scaling Infrastructure",
-      "Data Normalization & Cleaning",
+      "Data Normalization",
       "Daily/Hourly Scheduling",
     ],
-    tech: ["Playwright", "PostgreSQL", "Kafka"],
+    tech: ["Playwright", "PostgreSQL"],
   },
   {
     title: "Crypto & DeFi Automation",
     description:
-      "MEV bots, arbitrage engines, and on-chain analytics. We build financial weapons for the decentralized web.",
+      "MEV bots and arbitrage engines. Financial weapons engineered for the decentralized web.",
     icon: Landmark,
     className: "md:col-span-4",
     gradient: "from-indigo-500/20 via-indigo-500/5 to-transparent",
@@ -100,17 +97,33 @@ const services = [
     iconColor: "text-indigo-400",
     pattern: "circuit",
     features: [
-      "Mempool Monitoring & Sniping",
-      "Cross-DEX Arbitrage Execution",
+      "Mempool Monitoring",
+      "Cross-DEX Arbitrage",
       "Smart Contract Interaction",
-      "Private Node Infrastructure",
     ],
-    tech: ["Golang", "Rust", "Solidity", "Geth"],
+    tech: ["Go", "Rust", "Solidity"],
+  },
+  {
+    title: "Automation Consulting",
+    description:
+      "Stop leaking time. We audit your workflows and build the tools to eliminate manual labor forever.",
+    icon: Code2,
+    className: "md:col-span-4",
+    gradient: "from-pink-500/20 via-pink-500/5 to-transparent",
+    border: "group-hover:border-pink-500/50",
+    iconColor: "text-pink-400",
+    pattern: "code",
+    features: [
+      "Workflow & Security Audit",
+      "Legacy System Integration",
+      "Performance Optimization",
+    ],
+    tech: ["TypeScript", "Kubernetes"],
   },
   {
     title: "ClawBot AI Agent Setup",
     description:
-      "Setup dan konfigurasi OpenClaw — AI agent personal yang bisa browsing, eksekusi perintah, dan terintegrasi langsung ke WhatsApp, Telegram, atau Slack bisnis kamu. Kita handle semua dari install sampai custom skill.",
+      "Setup dan konfigurasi OpenClaw — AI agent personal yang bisa browsing, eksekusi perintah, dan terintegrasi langsung ke WhatsApp atau Slack bisnis kamu.",
     icon: Brain,
     className: "md:col-span-12",
     gradient: "from-fuchsia-500/20 via-fuchsia-500/5 to-transparent",
@@ -123,27 +136,8 @@ const services = [
       "Custom Skills & Plugin Development",
       "Browser Control — browsing, form filling, data extraction",
       "Persistent Memory & Context Management",
-      "Full System Access atau Sandboxed Mode",
     ],
-    tech: ["OpenClaw", "Node.js", "Anthropic Claude", "OpenAI", "WhatsApp API"],
-  },
-  {
-    title: "Automation Consulting",
-    description:
-      "We audit your workflows and build custom tools to eliminate manual labor forever.",
-    icon: Code2,
-    className: "md:col-span-12",
-    gradient: "from-pink-500/20 via-pink-500/5 to-transparent",
-    border: "group-hover:border-pink-500/50",
-    iconColor: "text-pink-400",
-    pattern: "code",
-    features: [
-      "Workflow & Security Audit",
-      "Legacy System Integration",
-      "Custom API Development",
-      "Performance Optimization",
-    ],
-    tech: ["TypeScript", "Kubernetes", "GraphQL"],
+    tech: ["OpenClaw", "WhatsApp API"],
   },
 ];
 
@@ -173,12 +167,12 @@ export default function Services() {
               <Bot className="w-3.5 h-3.5" />
               <span>Capabilities</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
               Solutions We Build.
             </h2>
-            <p className="text-xl text-zinc-400 leading-relaxed">
-              From simple scripts to complex distributed systems, we engineer
-              the automation tools your business needs to win.
+            <p className="text-xl text-zinc-400 leading-relaxed font-normal">
+              From simple scripts to <span className="text-white font-medium">complex distributed systems</span>, we engineer
+              the automation tools your business needs to <span className="text-blue-400 font-semibold italic underline decoration-blue-500/20 underline-offset-4 tracking-tight">win.</span>
             </p>
           </div>
         </Reveal>
@@ -194,7 +188,7 @@ export default function Services() {
               <div
                 onClick={() => setSelectedService(service)}
                 className={cn(
-                  "group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0f1011] transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 cursor-pointer h-full", // Added h-full
+                  "group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0f1011] transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 cursor-pointer min-h-[320px] flex flex-col justify-between",
                   service.border,
                 )}
               >
@@ -241,9 +235,9 @@ export default function Services() {
                   )}
                   {service.pattern === "data" && (
                     <div className="absolute inset-0 flex flex-col gap-2 p-4 font-mono text-[10px] leading-none select-none overflow-hidden opacity-50">
-                      {Array.from({ length: 10 }).map((_, i) => (
+                      {["0x8f2d", "0x1a4c", "0x9b5e", "0x3c7a", "0xd4e2", "0x5f81", "0x2e9b", "0x7a3c", "0x1d6f", "0x8c4a"].map((str, i) => (
                         <div key={i} className="whitespace-nowrap">
-                          {Math.random().toString(36).substring(2)}
+                          {str}{str.split('').reverse().join('')}
                         </div>
                       ))}
                     </div>
@@ -256,7 +250,7 @@ export default function Services() {
                 </div>
 
                 {/* Content */}
-                <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+                <div className="relative z-10 p-8 flex flex-col justify-between h-full">
                   <div className="space-y-6">
                     {/* Icon */}
                     <div

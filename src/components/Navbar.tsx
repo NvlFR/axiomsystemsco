@@ -49,16 +49,16 @@ export default function Navbar() {
         <div className="max-w-[1240px] mx-auto px-6 h-[64px] flex items-center justify-between relative">
           {/* Logo */}
           <a href="/" className="decoration-0 relative z-[60]">
-            <Logo withText />
+            <Logo withText iconClassName="w-7 h-7 md:w-6 md:h-6" textClassName="text-[18px] md:text-[16px]" />
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex gap-8 items-center absolute left-1/2 -translate-x-1/2">
+          <div className="hidden md:flex gap-10 items-center ml-12 mr-auto">
             {menuItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-[14px] text-zinc-400 hover:text-white transition-colors duration-200"
+                className="text-[14px] font-medium text-zinc-400 hover:text-white transition-all duration-200 hover:translate-y-[-1px]"
               >
                 {item.name}
               </a>

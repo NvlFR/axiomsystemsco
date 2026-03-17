@@ -71,7 +71,7 @@ export default function PricingCalculator() {
       className="py-24 px-6 relative border-t border-white/[0.08] bg-[#08090a] overflow-hidden"
     >
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-500/5 blur-[120px] rounded-full -z-10 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] max-w-[100vw] bg-indigo-500/5 blur-[120px] rounded-full -z-10 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto">
         {/* Header */}

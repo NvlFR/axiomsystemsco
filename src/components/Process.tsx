@@ -106,24 +106,24 @@ export default function Process() {
             </div>
 
             {/* Connector Pipes (Mobile Vertical) */}
-            <div className="lg:hidden absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[2px] bg-white/[0.05] z-0"></div>
+            <div className="lg:hidden absolute top-0 bottom-0 left-[39px] w-px bg-white/[0.05] z-0"></div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8 px-4 lg:px-0 relative z-10">
               {steps.map((step, index) => (
                 <div
                   key={index}
                   onMouseEnter={() => setActiveStep(index)}
                   onMouseLeave={() => setActiveStep(null)}
                   className={cn(
-                    "group relative flex flex-col items-center text-center space-y-6 transition-all duration-300",
+                    "group relative flex flex-row lg:flex-col items-center lg:items-center text-left lg:text-center gap-5 lg:gap-0 lg:space-y-6 transition-all duration-300 py-1 lg:py-0",
                     // Dynamic Z-Index: Active item gets z-50 to pop over everything
-                    activeStep === index ? "z-50 scale-105" : "z-10",
+                    activeStep === index ? "z-50 scale-[1.01] lg:scale-[1.02]" : "z-10",
                   )}
                 >
                   {/* Node */}
                   <div
                     className={cn(
-                      "w-[120px] h-[120px] rounded-full border bg-[#08090a] flex items-center justify-center transition-all duration-500 group-hover:shadow-[0_0_30px_-10px_rgba(255,255,255,0.1)] relative",
+                      "w-12 h-12 lg:w-[120px] lg:h-[120px] rounded-full border bg-[#08090a] flex-shrink-0 flex items-center justify-center transition-all duration-500 group-hover:shadow-[0_0_30px_-10px_rgba(255,255,255,0.1)] relative",
                       step.border,
                       activeStep === index ? "bg-[#0f1011]" : "",
                     )}
@@ -139,16 +139,16 @@ export default function Process() {
                     {/* Icon */}
                     <step.icon
                       className={cn(
-                        "w-10 h-10 transition-colors duration-300",
+                        "w-5 h-5 lg:w-10 lg:h-10 transition-colors duration-300",
                         step.color,
                       )}
                     />
 
                     {/* Status Dot */}
-                    <div className="absolute bottom-2 right-8 w-4 h-4 bg-[#08090a] rounded-full flex items-center justify-center border border-white/10">
+                    <div className="absolute lg:bottom-2 bottom-0 lg:right-8 right-0 w-2.5 h-2.5 lg:w-4 lg:h-4 bg-[#08090a] rounded-full flex items-center justify-center border border-white/10">
                       <div
                         className={cn(
-                          "w-1.5 h-1.5 rounded-full",
+                          "w-1 h-1 lg:w-1.5 lg:h-1.5 rounded-full",
                           activeStep === index
                             ? "bg-green-500 animate-pulse"
                             : "bg-zinc-600",
@@ -158,11 +158,11 @@ export default function Process() {
                   </div>
 
                   {/* Labels */}
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-bold text-white tracking-wide">
+                  <div className="space-y-0.5 lg:space-y-2 py-1 lg:py-2">
+                    <h3 className="text-base lg:text-lg font-bold text-white tracking-wide">
                       {step.title}
                     </h3>
-                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest">
+                    <div className="text-[10px] lg:text-xs font-mono text-zinc-500 uppercase tracking-widest">
                       {step.subtitle}
                     </div>
                   </div>
@@ -170,7 +170,7 @@ export default function Process() {
                   {/* Detail Card (Hover) */}
                   <div
                     className={cn(
-                      "absolute top-[200px] w-full bg-[#18181b] border border-white/10 rounded-xl p-4 text-left transition-all duration-300 pointer-events-none opacity-0 translate-y-4 shadow-xl min-w-[200px] z-[60]",
+                      "absolute top-[100%] lg:top-[200px] left-16 lg:left-0 lg:w-full bg-[#18181b] border border-white/10 rounded-xl p-4 text-left transition-all duration-300 pointer-events-none opacity-0 translate-y-4 shadow-xl min-w-[220px] z-[60]",
                       activeStep === index ? "opacity-100 translate-y-0" : "",
                     )}
                   >
@@ -184,7 +184,7 @@ export default function Process() {
                       {step.details.items.map((item, i) => (
                         <li
                           key={i}
-                          className="flex items-center gap-2 text-xs text-zinc-300"
+                          className="flex items-center gap-2 text-[11px] lg:text-xs text-zinc-300"
                         >
                           <div
                             className={cn(

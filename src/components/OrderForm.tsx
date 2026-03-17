@@ -15,9 +15,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   ArrowRight,
   Lock,
+  BadgeCheck,
   ShieldCheck,
   Terminal,
-  Fingerprint,
 } from "lucide-react";
 
 export default function OrderForm() {
@@ -77,19 +77,19 @@ export default function OrderForm() {
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="p-2 rounded-lg bg-white/5 border border-white/10">
-                  <ShieldCheck className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <h4 className="text-white font-medium">
-                    NDA & Confidentiality
+                <div className="p-6 bg-emerald-500/10 border-l-[3px] border-emerald-500/50 rounded-r-xl">
+                  <h4 className="text-white font-bold text-lg mb-2 flex items-center gap-2">
+                    <ShieldCheck className="w-5 h-5 text-emerald-400" />
+                    Ironclad Confidentiality
                   </h4>
-                  <p className="text-sm text-zinc-500">
-                    Your strategies remain your trade secrets.
+                  <p className="text-sm text-zinc-400">
+                    Your trade secrets are safe. We prioritize NDA-standard privacy for every single deployment.
                   </p>
                 </div>
               </div>
             </div>
+
+
           </div>
         </Reveal>
 
@@ -119,43 +119,41 @@ export default function OrderForm() {
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="space-y-1.5">
-                  <Label
-                    htmlFor="name"
-                    className="text-zinc-400 text-xs font-mono uppercase tracking-wider"
-                  >
-                    Client Identity / Full Name
-                  </Label>
-                  <div className="relative">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
+                    <Label
+                      htmlFor="name"
+                      className="text-zinc-500 text-[10px] font-bold uppercase tracking-widest"
+                    >
+                      Your Name
+                    </Label>
                     <Input
                       id="name"
-                      placeholder="Enter your name..."
+                      placeholder="John Doe"
                       required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="bg-white/[0.02] border-white/[0.08] focus:border-white/20 focus:bg-white/[0.04] focus:ring-0 h-11 rounded-lg text-white placeholder:text-zinc-600 pl-10 transition-colors"
+                      className="bg-white/[0.03] border-white/[0.1] focus:border-white/30 h-12 rounded-xl text-white placeholder:text-zinc-600 pl-4 transition-all"
                     />
-                    <Fingerprint className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-600" />
                   </div>
-                </div>
-
-                <div className="space-y-1.5">
-                  <Label
-                    htmlFor="phone"
-                    className="text-zinc-400 text-xs font-mono uppercase tracking-wider"
-                  >
-                    Secure Contact Number
-                  </Label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    placeholder="i.e. +1 (555) 000-0000"
-                    required
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    className="bg-white/[0.02] border-white/[0.08] focus:border-white/20 focus:bg-white/[0.04] focus:ring-0 h-11 rounded-lg text-white font-mono placeholder:text-zinc-600 transition-colors"
-                  />
+                  <div className="space-y-1.5">
+                    <Label
+                      htmlFor="phone"
+                      className="text-zinc-500 text-[10px] font-bold uppercase tracking-widest"
+                    >
+                      WhatsApp / Phone
+                    </Label>
+                    <Input
+                      id="phone"
+                      type="tel"
+                      placeholder="+62..."
+                      required
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      className="bg-white/[0.03] border-white/[0.1] focus:border-white/30 h-12 rounded-xl text-white font-mono transition-all"
+                    />
+                  </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
