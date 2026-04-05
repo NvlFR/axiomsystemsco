@@ -25,7 +25,7 @@ const variants = [
       { icon: Sparkles, label: "Kustom Skill", desc: "Build plugin sendiri atau pakai community skills" },
       { icon: Shield, label: "Privacy-First", desc: "Data tetap di local machine klien — tidak dikirim ke cloud" },
     ],
-    image: "/services/openclaw.png",
+    image: "/services/openclaw.webp",
   },
   {
     id: "picoclaw",

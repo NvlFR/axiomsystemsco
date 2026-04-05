@@ -34,7 +34,7 @@ const services = [
       "Multi-threaded Tasks",
     ],
     tech: ["Go", "Redis", "Docker"],
-    image: "/services/ticket.jpg",
+    image: "/services/ticket.webp",
   },
   {
     title: "Auction & Bidding Bots",
@@ -52,7 +52,7 @@ const services = [
       "Anti-Detection Measures",
     ],
     tech: ["Node.js", "WebSockets"],
-    image: "/services/auction.jpg",
+    image: "/services/auction.webp",
   },
   {
     title: "Queue Bypass Systems",
@@ -70,7 +70,7 @@ const services = [
       "Cloudflare Turnstile Bypass",
     ],
     tech: ["Node.js", "Puppeteer"],
-    image: "/services/queue.jpg",
+    image: "/services/queue.webp",
   },
   {
     title: "Enterprise Scraping",
@@ -88,7 +88,7 @@ const services = [
       "Daily/Hourly Scheduling",
     ],
     tech: ["Playwright", "PostgreSQL"],
-    image: "/services/scraping.jpg",
+    image: "/services/scraping.webp",
   },
   {
     title: "Crypto & DeFi Automation",
@@ -106,7 +106,7 @@ const services = [
       "Smart Contract Interaction",
     ],
     tech: ["Go", "Rust", "Solidity"],
-    image: "/services/crypto.jpg",
+    image: "/services/crypto.webp",
   },
   {
     title: "Automation Consulting",
@@ -124,7 +124,7 @@ const services = [
       "Performance Optimization",
     ],
     tech: ["TypeScript", "Kubernetes"],
-    image: "/services/consulting.jpg",
+    image: "/services/consulting.webp",
   },
   {
     title: "OpenClaw AI Agent Setup",
@@ -144,7 +144,7 @@ const services = [
       "Persistent Memory & Context Management",
     ],
     tech: ["OpenClaw", "WhatsApp API"],
-    image: "/services/openclaw.png",
+    image: "/services/openclaw.webp",
   },
 ];
 

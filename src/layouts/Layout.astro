@@ -18,6 +18,18 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="AxiomSystemsCo — Custom Bot & Automation Agency. We build ticket snipers, web scrapers, WhatsApp bots, and enterprise automation systems for modern businesses." />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://axiomsystemsco.com/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="AxiomSystemsCo — Custom Bot & Automation Agency. We build ticket snipers, web scrapers, WhatsApp bots, and enterprise automation systems for modern businesses." />
+    <meta property="og:image" content="https://axiomsystemsco.com/og-image.png" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://axiomsystemsco.com/" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content="AxiomSystemsCo — Custom Bot & Automation Agency. We build ticket snipers, web scrapers, WhatsApp bots, and enterprise automation systems for modern businesses." />
+    <meta property="twitter:image" content="https://axiomsystemsco.com/og-image.png" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.svg" />

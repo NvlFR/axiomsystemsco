@@ -13,7 +13,7 @@ const testimonials = [
     after: "5 Menit",
     metric: "95% Operational Time Saved",
     verified: true,
-    image: "/testimonials/andik.png"
+    image: "/testimonials/andik.webp"
   },
   {
     name: "Raka S.",
@@ -24,7 +24,7 @@ const testimonials = [
     after: "Otomatis & Presisi",
     metric: "100% Automatic Slot Fill Rate",
     verified: true,
-    image: "/testimonials/raka.png"
+    image: "/testimonials/raka.webp"
   },
   {
     name: "Meta V.",
@@ -35,7 +35,7 @@ const testimonials = [
     after: "Otomatis 24/7",
     metric: "10x Data Extraction Efficiency",
     verified: true,
-    image: "/testimonials/meta.png"
+    image: "/testimonials/meta.webp"
   },
   {
     name: "Budi H.",
@@ -46,7 +46,7 @@ const testimonials = [
     after: "Instant Reply",
     metric: "40% Conversion Increase",
     verified: true,
-    image: "/testimonials/budi.png"
+    image: "/testimonials/budi.webp"
   },
   {
     name: "Sari W.",
@@ -57,7 +57,7 @@ const testimonials = [
     after: "Real-time Update",
     metric: "Zero Human Error",
     verified: true,
-    image: "/testimonials/sari.png"
+    image: "/testimonials/sari.webp"
   },
 ];
 

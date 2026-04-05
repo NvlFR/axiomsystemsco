@@ -10,7 +10,7 @@ const caseStudies = [
     solution: "Custom Scraper Engine yang update data tiap 1 jam ke Cloud Database & Dashboard.",
     result: "Full Automation",
     stats: "ROI: 80 Hours Saved / Month",
-    image: "/casestudies/price_engine.png",
+    image: "/casestudies/price_engine.webp",
     icon: <Clock className="w-5 h-5" />,
     color: "from-blue-600/40 to-blue-900/40",
     accent: "text-blue-400"
@@ -22,7 +22,7 @@ const caseStudies = [
     solution: "Gemini AI Agent yang menghandle tanya jawab & booking jadwal survey 24/7.",
     result: "+240% Conv. Rate",
     stats: "ROI: Breakeven < 1 Month",
-    image: "/casestudies/booking_ai.jpg",
+    image: "/casestudies/booking_ai.webp",
     icon: <Target className="w-5 h-5" />,
     color: "from-purple-600/40 to-purple-900/40",
     accent: "text-purple-400"
@@ -34,7 +34,7 @@ const caseStudies = [
     solution: "Node.js High-Concurrency script dengan optimasi API bypass & multi-session.",
     result: "Zero Downtime",
     stats: "ROI: 100% Slot Sold Out",
-    image: "/casestudies/ticket_system.jpg",
+    image: "/casestudies/ticket_system.webp",
     icon: <Zap className="w-5 h-5" />,
     color: "from-emerald-600/40 to-emerald-900/40",
     accent: "text-emerald-400"
